@@ -578,11 +578,11 @@
       try {
         if (isLogin) {
           await signInWithEmailAndPassword(auth, email, password);
-          alert("¡Inicio de sesión exitoso!");
+          window.location.href = "../makai_academy_dashboard_principal_lms_simulador_caces/code.html";
         } else {
           const cred = await createUserWithEmailAndPassword(auth, email, password);
           await saveUser(cred.user);
-          alert("¡Registro exitoso en Makai Academy!");
+          window.location.href = "../makai_academy_dashboard_principal_lms_simulador_caces/code.html";
         }
       } catch (error) {
         alert("Error: " + error.message);
@@ -598,7 +598,7 @@
       try {
         const cred = await signInWithPopup(auth, provider);
         await saveUser(cred.user);
-        alert(`¡Bienvenido ${cred.user.displayName}!`);
+        window.location.href = "../makai_academy_dashboard_principal_lms_simulador_caces/code.html";
       } catch (error) {
         alert("Error con Google: " + error.message);
       }
