@@ -1,0 +1,535 @@
+<!DOCTYPE html><html class="dark" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_blank" name="shell-type">
+<title>Makai Academy - Formación Médica Especializada</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-container": "#00e5ff",
+            "on-tertiary-container": "#a23200",
+            "surface-container": "#151922",
+            "on-error-container": "#ffdad6",
+            "secondary-container": "#7ac100",
+            "surface-dim": "#0a0d14",
+            "on-primary-fixed": "#001f24",
+            "tertiary-container": "#ffc3b0",
+            "on-error": "#690005",
+            "inverse-primary": "#006875",
+            "surface-container-high": "#222733",
+            "surface-variant": "#2a303d",
+            "primary-fixed": "#9cf0ff",
+            "secondary-fixed": "#acf847",
+            "on-surface-variant": "#9baec0",
+            "surface-container-low": "#11141d",
+            "tertiary-fixed": "#ffdbd0",
+            "primary": "#c3f5ff",
+            "on-secondary-fixed-variant": "#304f00",
+            "tertiary-fixed-dim": "#ffb59d",
+            "on-secondary-fixed": "#102000",
+            "outline-variant": "#2b3442",
+            "inverse-surface": "#e1e2ea",
+            "surface-tint": "#00daf3",
+            "on-primary-container": "#002b30",
+            "error": "#ffb4ab",
+            "secondary": "#94de2d",
+            "surface-bright": "#2e3544",
+            "surface": "#0a0d14",
+            "outline": "#607286",
+            "on-primary-fixed-variant": "#004f58",
+            "tertiary": "#ffe8e1",
+            "error-container": "#93000a",
+            "on-secondary": "#1f3700",
+            "surface-container-highest": "#2a313f",
+            "secondary-fixed-dim": "#91db2a",
+            "on-tertiary-fixed": "#390c00",
+            "on-secondary-container": "#2c4900",
+            "on-background": "#e1e2ea",
+            "inverse-on-surface": "#2e3036",
+            "on-surface": "#edf2f7",
+            "surface-container-lowest": "#07090e",
+            "on-primary": "#00363d",
+            "on-tertiary-fixed-variant": "#832600",
+            "primary-fixed-dim": "#00daf3",
+            "background": "#0a0d14",
+            "on-tertiary": "#5d1900"
+          },
+          fontFamily: {
+            "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["JetBrains Mono", "monospace"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-md": ["JetBrains Mono", "monospace"],
+            "headline-xl": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#0a0d14] font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen relative overflow-x-hidden flex flex-col justify-center">
+<!-- Ambient background glow accents -->
+<div class="fixed top-0 left-1/4 -translate-x-1/2 w-[600px] h-[600px] bg-primary-container/[0.04] rounded-full blur-[140px] pointer-events-none"></div>
+<div class="fixed bottom-0 right-1/4 translate-x-1/2 w-[600px] h-[600px] bg-secondary/[0.03] rounded-full blur-[140px] pointer-events-none"></div>
+<!-- Top Subtle Brand Navigation Ribbon -->
+<header class="w-full border-b border-surface-container-high/60 bg-[#0a0d14]/80 backdrop-blur-md sticky top-0 z-30">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<img alt="Makai Medical Academy" class="h-9 w-auto object-contain filter drop-shadow-[0_0_10px_rgba(0,229,255,0.3)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD07CtXQ_gbR1wlBD33Em_SMwX1amEw2dqv0Nqxem_4IJGJ4ZtKZUb0I2EWwaUU6Bp5cc-dKY_51OeCfjTMSoBeI-QnrydojylGb3t5D1oG_PlqtY7IAeISVHVLammvWeeIF1SvMeH2jnVtulOcQljPdF9yfmFEgnW69JMoZL3b72ydqWsNOyKyRUJa5WvJWWHG_cwGCAQ6bgZGtYgRa-DuQmnmLWL7tHgLChXOIcMCw93dtkPvptWGHaezITYVxYY49xc">
+<div class="flex flex-col">
+<span class="font-headline-sm text-base font-bold tracking-tight text-white">MAKAI <span class="text-primary-container">ACADEMY</span></span>
+<span class="font-label-sm text-[10px] text-on-surface-variant tracking-wider uppercase">Portal de Ciencias de la Salud y Formación Continua</span>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-2 px-3 py-1 rounded-full bg-surface-container-low border border-outline-variant/40">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-xs text-on-surface-variant font-medium">Sistemas Operativos 100%</span>
+</div>
+<div class="hidden sm:flex items-center text-xs text-outline space-x-1 font-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary-container">lock</span>
+<span class="">Red Segura Sanitaria e Institucional</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Wide Widescreen Container (2-Column Desktop Experience) -->
+<main class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 py-8 lg:py-12 flex-1 flex items-center">
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start">
+<!-- ============================================================== -->
+<!-- COLUMNA 1: FORMULARIO DE ACCESO, ROLES & REGISTRO (45% ancho) -->
+<!-- ============================================================== -->
+<section class="lg:col-span-5 flex flex-col bg-[#11141d]/90 backdrop-blur-xl border border-surface-container-high/70 rounded-2xl p-6 sm:p-8 lg:p-9 shadow-2xl relative">
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-container/20 via-primary-container to-primary-container/20 rounded-t-2xl"></div>
+<!-- Encabezado de acceso con Logo y subtítulo -->
+<div class="flex items-center justify-between pb-4 border-b border-surface-container-high/60">
+<div class="flex items-center space-x-3">
+<img alt="Makai Medical Academy" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD07CtXQ_gbR1wlBD33Em_SMwX1amEw2dqv0Nqxem_4IJGJ4ZtKZUb0I2EWwaUU6Bp5cc-dKY_51OeCfjTMSoBeI-QnrydojylGb3t5D1oG_PlqtY7IAeISVHVLammvWeeIF1SvMeH2jnVtulOcQljPdF9yfmFEgnW69JMoZL3b72ydqWsNOyKyRUJa5WvJWWHG_cwGCAQ6bgZGtYgRa-DuQmnmLWL7tHgLChXOIcMCw93dtkPvptWGHaezITYVxYY49xc">
+<div>
+<h1 class="font-headline-sm text-lg font-bold text-white tracking-tight">MAKAI ACADEMY</h1>
+<p class="font-body-sm text-xs text-on-surface-variant">Formación en Ciencias de la Salud</p>
+</div>
+</div>
+<span class="font-label-sm text-[11px] px-2 py-0.5 rounded bg-primary-container/10 text-primary-container border border-primary-container/30">Capacitación Continua en Salud</span>
+</div>
+<!-- Tabs de Selección: Iniciar Sesión / Crear Cuenta -->
+<div class="w-full mt-6 p-1 bg-surface-container-lowest border border-surface-container-high/80 rounded-xl flex items-center">
+<button class="flex-1 py-2.5 text-center rounded-lg font-headline-sm text-xs font-semibold transition-all duration-200 bg-surface-container-high text-primary-container shadow-sm flex items-center justify-center space-x-2" id="tab-login" onclick="switchAuthMode('login')" type="button">
+<span class="material-symbols-outlined text-[16px]">lock_open</span>
+<span class="">Iniciar Sesión</span>
+</button>
+<button class="flex-1 py-2.5 text-center rounded-lg font-headline-sm text-xs font-semibold transition-all duration-200 text-on-surface-variant hover:text-white flex items-center justify-center space-x-2" id="tab-register" onclick="switchAuthMode('register')" type="button">
+<span class="material-symbols-outlined text-[16px]">person_add</span>
+<span class="">Crear Cuenta de Salud</span>
+</button>
+</div>
+<!-- Selector de Perfil y Credencialización Clínica (Dos tarjetas lado a lado) -->
+
+<!-- Formulario Clínico Seguro -->
+<form class="flex flex-col space-y-4 mt-6" onsubmit="event.preventDefault();">
+<!-- Correo Institucional -->
+<div class="flex flex-col space-y-1.5">
+<label class="font-label-sm text-xs text-on-surface-variant flex items-center justify-between" for="med-email">
+<span class="">Correo Electrónico Institucional</span>
+<span class="text-outline text-[11px] font-label-sm">ej. usuario@salud.org / institucion.edu</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-lg pointer-events-none">local_hospital</span>
+<input class="w-full bg-surface-container-lowest border border-surface-container-high text-on-surface placeholder:text-outline/60 pl-11 pr-4 py-3 rounded-xl text-sm focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" id="med-email" placeholder="ej. usuario@universidad.edu.ec / hospital.org" type="email">
+</div>
+</div>
+<!-- Campo dinámico opcional en Registro: Colegiatura -->
+<div class="hidden flex-col space-y-1.5 transition-all" id="field-license">
+<label class="font-label-sm text-xs text-on-surface-variant flex items-center justify-between" for="med-license">
+<span class="">N° de Colegiado Sanitario / Matrícula Profesional</span>
+<span class="text-outline text-[10px]">Opcional</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-lg pointer-events-none">badge</span>
+<input class="w-full bg-surface-container-lowest border border-surface-container-high text-on-surface placeholder:text-outline/60 pl-11 pr-4 py-3 rounded-xl text-sm focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" id="med-license" placeholder="CMD / CMP / D.N.I. Médico / NPI Code" type="text">
+</div>
+</div>
+<!-- Contraseña con Medidor y Visibilidad -->
+<div class="flex flex-col space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-xs text-on-surface-variant" for="med-pass">Clave Criptográfica de Acceso</label>
+<button class="font-label-sm text-[11px] text-primary-container hover:underline flex items-center space-x-1" onclick="togglePassVisibility()" type="button">
+<span class="material-symbols-outlined text-[13px]" id="pass-icon">visibility</span>
+<span class="" id="pass-text">Mostrar</span>
+</button>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-lg pointer-events-none">key</span>
+<input class="w-full bg-surface-container-lowest border border-surface-container-high text-on-surface placeholder:text-outline/60 pl-11 pr-11 py-3 rounded-xl text-sm focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" id="med-pass" oninput="calculateEntropy(this.value)" placeholder="••••••••••••" type="password">
+<div class="absolute right-3.5 flex items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-outline" id="pass-indicator-dot"></span>
+</div>
+</div>
+<!-- Medidor de Complejidad -->
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden mt-1">
+<div class="h-full bg-outline transition-all duration-300 w-1/4" id="entropy-bar"></div>
+</div>
+</div>
+<!-- Opciones de Recordar & Olvido -->
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center space-x-2 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-lowest border-outline-variant text-primary-container focus:ring-0 cursor-pointer accent-[#00e5ff]" type="checkbox">
+<span class="font-body-sm text-xs text-on-surface-variant">Recordar terminal segura</span>
+</label>
+<a class="font-label-sm text-xs text-primary-container hover:underline" href="#">¿Olvidaste tu contraseña institucional?</a>
+</div>
+<!-- Botón CTA Principal Neón -->
+<div class="pt-2">
+<button class="w-full py-3.5 px-6 rounded-xl bg-primary-container text-surface-container-lowest font-headline-sm font-bold text-sm flex items-center justify-center space-x-2 shadow-[0_0_24px_rgba(0,229,255,0.35)] hover:shadow-[0_0_32px_rgba(0,229,255,0.6)] hover:bg-[#80f2ff] transition-all transform active:scale-[0.99] cursor-pointer" id="btn-submit" type="submit">
+<span class="" id="cta-label">Acceder al Portal de Salud</span>
+<span class="material-symbols-outlined text-[18px] font-bold">arrow_forward</span>
+</button>
+</div><div class="text-center pt-2 pb-1"><p class="font-body-sm text-xs text-on-surface-variant">¿Eres especialista? Únete a nuestro cuerpo docente clínico. <a href="#" class="text-primary-container hover:underline font-medium transition-colors">Postula aquí</a>.</p></div>
+</form>
+<!-- Métodos SSO Académico / Institucional -->
+<div class="flex flex-col space-y-3 mt-6">
+<div class="relative flex items-center justify-center">
+<div class="w-full h-px bg-surface-container-high"></div>
+<span class="absolute px-3 bg-[#11141d] font-label-sm text-[10px] text-outline uppercase tracking-wider">o mediante SSO Académico</span>
+</div>
+<div class="grid grid-cols-3 gap-2.5 pt-1"><button class="flex items-center justify-center space-x-2 py-2.5 px-3 rounded-xl bg-surface-container-lowest border border-surface-container-high hover:border-outline-variant text-on-surface hover:text-white transition-all text-xs font-label-sm" type="button"><svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24"><path d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z" fill="#EA4335"></path><path d="M23.5 12.3c0-.8-.1-1.7-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z" fill="#4285F4"></path><path d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3 0-.8.1-1.6.4-2.3L1.9 7.3C.7 9.7 0 12.3 0 15s.7 5.3 1.9 7.7l3.7-2.9z" fill="#FBBC05"></path><path d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16c1.8 3.7 5.6 7 10.1 7z" fill="#34A853"></path></svg><span class="">Google</span></button><button class="flex items-center justify-center space-x-2 py-2.5 px-3 rounded-xl bg-surface-container-lowest border border-surface-container-high hover:border-outline-variant text-on-surface hover:text-white transition-all text-xs font-label-sm" type="button"><svg class="w-4 h-4 shrink-0" viewBox="0 0 21 21"><rect x="1" y="1" width="9" height="9" fill="#f25022"></rect><rect x="11" y="1" width="9" height="9" fill="#7fba00"></rect><rect x="1" y="11" width="9" height="9" fill="#00a4ef"></rect><rect x="11" y="11" width="9" height="9" fill="#ffb900"></rect></svg><span class="">Microsoft</span></button><button class="flex items-center justify-center space-x-2 py-2.5 px-3 rounded-xl bg-surface-container-lowest border border-surface-container-high hover:border-outline-variant text-on-surface hover:text-white transition-all text-xs font-label-sm" type="button"><svg class="w-4 h-4 shrink-0 fill-current text-white" viewBox="0 0 170 170"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.92-3.37-7.9-8.17-11.93-14.4-6.3-9.69-11.37-21.03-15.22-34.02-3.85-12.99-5.78-25.07-5.78-36.24 0-14.62 3.69-26.69 11.07-36.21 7.38-9.52 16.54-14.38 27.48-14.58 4.7 0 10.15 1.34 16.36 4.02 6.21 2.68 10.12 4.08 11.73 4.2 2.02-.35 6.13-1.87 12.33-4.56 6.2-2.69 11.66-3.87 16.37-3.55 12.23.82 21.99 5.34 29.28 13.56-10.74 6.54-16.01 15.54-15.82 27.01.2 9.04 3.73 16.66 10.6 22.86 6.87 6.2 14.86 9.8 23.97 10.8-2.68 8.04-5.94 15.69-9.78 22.97zM119.22 33.7c0-7.3 2.65-14.28 7.95-20.93 5.3-6.65 11.85-10.74 19.65-12.27.79 3.3 1.18 6.47 1.18 9.51 0 7.23-2.77 14.32-8.31 21.27-5.54 6.95-12.18 10.9-19.92 11.85-.35-3.17-.55-6.32-.55-9.43z"></path></svg><span class="">Apple</span></button></div>
+</div>
+<!-- Certificación de Seguridad al Pie -->
+<div class="mt-6 pt-4 border-t border-surface-container-high/60 flex items-center justify-center space-x-2 text-outline">
+<span class="material-symbols-outlined text-[16px] text-secondary">encrypted</span>
+<p class="font-label-sm text-[11px] text-center">Cifrado AES-256 bits • Cumplimiento HIPAA &amp; RGPD Sanitario</p>
+</div>
+</section>
+<!-- ============================================================== -->
+<!-- COLUMNA 2: PLANES ACADÉMICOS Y PRECIOS COMPARATIVOS (55% ancho)-->
+<!-- ============================================================== -->
+<section class="lg:col-span-7 flex flex-col space-y-6"><!-- Encabezado de la Sección de Planes CACES -->
+<div class="flex flex-col space-y-2">
+<div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary-container/10 border border-primary-container/20 self-start">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-xs text-primary-container uppercase tracking-wider font-semibold">FORMACIÓN CONTINUA EN SALUD ACREDITADA</span>
+</div>
+<h2 class="font-headline-lg text-2xl lg:text-3xl font-bold text-white tracking-tight">Planes Académicos en Ciencias de la Salud &amp; Preparación CACES</h2>
+<p class="font-body-md text-sm text-on-surface-variant max-w-2xl">Diseñado para estudiantes y profesionales de salud de Latinoamérica con preparación integral de alto rendimiento para el examen CACES, rondas clínicas y acreditación profesional.</p>
+</div>
+<!-- Selector de Período y Toggle visual Mensual / Anual -->
+<div class="flex items-center justify-between p-2 rounded-xl bg-surface-container-low border border-surface-container-high/80">
+<div class="flex items-center space-x-2 pl-2">
+<span class="material-symbols-outlined text-primary-container text-[18px]">calendar_month</span>
+<span class="font-headline-sm text-xs text-white font-semibold">Periodo de Facturación:</span>
+</div>
+<div class="flex items-center bg-surface-container-lowest p-1 rounded-lg border border-surface-container-high">
+<button class="px-3 py-1 rounded-md text-xs font-headline-sm font-semibold transition-all text-on-surface-variant hover:text-white" type="button">
+      Mensual
+    </button>
+<button class="px-3 py-1 rounded-md text-xs font-headline-sm font-semibold transition-all bg-primary-container text-surface-container-lowest shadow-sm flex items-center space-x-1.5" type="button">
+<span class="">Anual</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] bg-surface-container-lowest/20 text-surface-container-lowest border border-surface-container-lowest/30 font-bold">Ahorra 35%</span>
+</button>
+</div>
+</div>
+<!-- Cuadrícula de 3 Tarjetas de Suscripción -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
+<!-- TARJETA 1: PLAN BÁSICO -->
+<div class="flex flex-col justify-between p-5 rounded-2xl bg-[#11141d]/80 border border-surface-container-high/70 hover:border-outline/40 transition-all shadow-lg">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-[11px] uppercase tracking-wider px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">BÁSICO</span>
+<span class="material-symbols-outlined text-outline text-[18px]">clinical_notes</span>
+</div>
+<h3 class="font-headline-sm text-base font-bold text-white">Plan Básico</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-1 leading-snug">Acceso formativo introductorio para estudiantes de medicina y áreas sanitarias.</p>
+<div class="my-4 pb-3 border-b border-surface-container-high">
+<div class="flex items-baseline space-x-1">
+<span class="font-headline-xl text-2xl font-extrabold text-white">$0</span>
+<span class="font-label-sm text-[11px] text-outline">/ siempre gratis</span>
+</div>
+</div>
+<ul class="flex flex-col space-y-2.5 text-xs">
+<li class="flex items-start space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-[11px]">Acceso formativo introductorio</span>
+</li>
+<li class="flex items-start space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-[11px]"><strong>15 Casos clínicos</strong> multidisciplinarios al mes</span>
+</li>
+<li class="flex items-start space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-[11px]">Acceso a foros de discusión clínica interprofesional</span>
+</li>
+<li class="flex items-start space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-[11px]">Visor diagnóstico y anatómico 2D estándar</span>
+</li>
+</ul>
+</div>
+<div class="pt-4 mt-4 border-t border-surface-container-high/60">
+<button class="w-full py-2.5 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-white font-headline-sm text-xs font-semibold transition-all text-center border border-surface-container-high cursor-pointer" type="button">
+        Continuar con Plan Básico
+      </button>
+</div>
+</div>
+<!-- TARJETA 2: MAKAI PRO CACES (DESTACADA ESTRELLA) -->
+<div class="flex flex-col justify-between p-5 rounded-2xl bg-gradient-to-b from-surface-container-high/90 to-[#11141d] border-2 border-primary-container relative shadow-[0_0_30px_rgba(0,229,255,0.22)] transform md:-translate-y-1.5">
+<div class="absolute -top-10 -right-10 w-28 h-28 bg-primary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary-container text-surface-container-lowest font-bold shadow-[0_0_12px_rgba(0,229,255,0.4)]">MÁS POPULAR / RECOMENDADO CACES</span>
+<span class="material-symbols-outlined text-primary-container text-[18px]">stars</span>
+</div>
+<h3 class="font-headline-sm text-base font-bold text-white flex items-center space-x-1.5">
+<span class="">Makai PRO CACES</span>
+<span class="material-symbols-outlined text-primary-container text-[16px]">verified</span>
+</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5 leading-snug">Preparación integral de máxima exigencia para aprobar y destacar en el examen CACES.</p>
+<!-- Callout persuasivo destacado de ahorro anual -->
+<div class="mt-3 mb-2 px-2.5 py-1 rounded-full bg-primary-container/15 border border-primary-container/40 flex items-center justify-center space-x-1.5 text-center">
+<span class="font-label-sm text-[10px] text-primary-container font-bold">🔥 Ahorra un 35% con facturación anual</span>
+</div>
+<div class="mb-3 pb-3 border-b border-surface-container-high/80">
+<div class="flex items-baseline space-x-1.5">
+<span class="font-headline-xl text-2xl font-extrabold text-primary-container drop-shadow-[0_0_10px_rgba(0,229,255,0.4)]">$17.99</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-white font-semibold">USD / mes</span>
+<span class="font-label-sm text-[9px] text-secondary font-medium">o $139.99 USD / año</span>
+</div>
+</div>
+</div>
+<ul class="flex flex-col space-y-2 text-xs">
+<li class="flex items-start space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-[11px] leading-tight">Acceso a <strong>Mentorías Clínicas Grupales Semanales</strong> en vivo</span>
+</li>
+<li class="flex items-start space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-[11px] leading-tight">Casos clínicos interdisciplinarios ilimitados (UCI, Urgencias, Quirófano, Consulta Externa)</span>
+</li>
+<li class="flex items-start space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-[11px] leading-tight">Acceso total a <strong>simuladores clínicos de casos reales en 2D y 3D</strong></span>
+</li>
+<li class="flex items-start space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-[11px] leading-tight">Módulo de estudio con algoritmo avanzado de <strong>repetición espaciada</strong> (reemplaza Anki garantizando retención a largo plazo)</span>
+</li>
+<li class="flex items-start space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-[11px] leading-tight">Bancos de preguntas infinitas enfocadas en el CACES para crear simuladores tipo <strong>simulacro con cronómetro</strong></span>
+</li>
+<li class="flex items-start space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-[11px] leading-tight">Visor diagnóstico interactivo Cloud y Créditos Oficiales de Formación Continua</span>
+</li>
+</ul>
+</div>
+<div class="pt-4 mt-4 border-t border-surface-container-high/80">
+<button class="w-full py-3 px-3 rounded-xl bg-primary-container text-surface-container-lowest font-headline-sm font-bold text-xs uppercase tracking-wide flex items-center justify-center space-x-1.5 shadow-[0_0_22px_rgba(0,229,255,0.4)] hover:shadow-[0_0_30px_rgba(0,229,255,0.65)] hover:bg-[#80f2ff] transition-all cursor-pointer" type="button">
+<span class="">ADQUIRIR MEMBRESÍA PRO CACES ⚡</span>
+</button>
+</div>
+</div>
+<!-- TARJETA 3: ADD-ON VIP / MENTORÍA ÉLITE -->
+<div class="flex flex-col justify-between p-5 rounded-2xl bg-[#11141d]/90 border border-amber-500/40 hover:border-amber-400/70 transition-all shadow-lg relative">
+<div class="absolute -top-10 -right-10 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold">EXCLUSIVO • ADD-ON VIP</span>
+<span class="material-symbols-outlined text-amber-400 text-[18px]">workspace_premium</span>
+</div>
+<h3 class="font-headline-sm text-base font-bold text-white flex items-center space-x-1.5">
+<span class="">Mentoría Élite VIP</span>
+<span class="material-symbols-outlined text-amber-400 text-[16px]">military_tech</span>
+</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-1 leading-snug">Acompañamiento personalizado 1 a 1 de alta especialidad clínica.</p>
+<div class="my-4 pb-3 border-b border-surface-container-high">
+<div class="flex items-baseline space-x-1.5">
+<span class="font-headline-xl text-2xl font-extrabold text-amber-300">$49.99</span>
+<span class="font-label-sm text-[11px] text-outline">USD (Pago único)</span>
+</div>
+</div>
+<ul class="flex flex-col space-y-2.5 text-xs">
+<li class="flex items-start space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-amber-400 text-[16px] shrink-0 mt-0.5">verified</span>
+<span class="text-[11px] leading-tight"><strong>Paquete Élite:</strong> 5 horas de tutoría clínica privada y personalizada 1 a 1 con docentes especialistas</span>
+</li>
+<li class="flex items-start space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-amber-400 text-[16px] shrink-0 mt-0.5">verified</span>
+<span class="text-[11px] leading-tight">Revisión individualizada de historial de simulacros CACES</span>
+</li>
+<li class="flex items-start space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-amber-400 text-[16px] shrink-0 mt-0.5">verified</span>
+<span class="text-[11px] leading-tight">Plan de estudio personalizado adaptado a tus rotaciones</span>
+</li>
+<li class="flex items-start space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-amber-400 text-[16px] shrink-0 mt-0.5">verified</span>
+<span class="text-[11px] leading-tight">Acceso prioritario directo vía canal VIP con tutores médicos</span>
+</li>
+</ul>
+</div>
+<div class="pt-4 mt-4 border-t border-surface-container-high/60">
+<button class="w-full py-2.5 px-3 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 text-amber-200 border border-amber-500/50 hover:border-amber-400 font-headline-sm text-xs font-semibold transition-all text-center cursor-pointer flex items-center justify-center space-x-1.5 shadow-sm" type="button">
+<span class="">Añadir Mentoría Élite VIP</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Sección Inferior: Medios de Pago Homologados con fuerte énfasis en pagos locales sin tarjeta -->
+<div class="p-5 rounded-2xl bg-[#11141d]/80 border border-surface-container-high/70 flex flex-col space-y-3">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">
+      Medios de Pago Seguros Homologados:
+    </span>
+<div class="flex items-center space-x-1.5 text-xs text-outline font-label-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+<span class="">Garantía de reembolso de 14 días</span>
+</div>
+</div>
+<!-- Fila 1: Métodos Locales Sin Tarjeta Destacados (América Latina / Ecuador) -->
+<div class="flex flex-wrap items-center gap-2 pt-1 text-xs font-label-sm">
+<div class="flex items-center space-x-2 px-3 py-1.5 bg-surface-container-lowest border border-primary-container/40 rounded-xl text-primary-container font-bold shadow-sm">
+<span class="material-symbols-outlined text-[16px]">smartphone</span>
+<span class="">PayPhone</span>
+<span class="px-1.5 py-0.2 rounded text-[9px] bg-primary-container/20 text-primary-container border border-primary-container/30 font-medium uppercase">Pago Móvil / App</span>
+</div>
+<div class="flex items-center space-x-2 px-3 py-1.5 bg-surface-container-lowest border border-secondary/40 rounded-xl text-secondary font-bold shadow-sm">
+<span class="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+<span class="">Deuna!</span>
+<span class="px-1.5 py-0.2 rounded text-[9px] bg-secondary/20 text-secondary border border-secondary/30 font-medium uppercase">Ecuador / QR</span>
+</div>
+<div class="flex items-center space-x-1.5 px-3 py-1.5 bg-surface-container-lowest border border-surface-container-high rounded-xl text-white font-medium hover:border-outline-variant transition-all">
+<span class="material-symbols-outlined text-[16px] text-secondary">account_balance</span>
+<span class="">Transferencia Bancaria Directa</span>
+<span class="text-outline text-[10px]">(Sin Tarjeta ni Comisiones)</span>
+</div>
+</div>
+<!-- Fila 2: Tarjetas y Pasarelas Internacionales -->
+<div class="flex flex-wrap items-center gap-2 text-xs font-label-sm pt-0.5">
+<span class="px-2.5 py-1 bg-surface-container-lowest border border-surface-container-high rounded-lg font-bold text-white tracking-wider text-[11px]">VISA</span>
+<span class="px-2.5 py-1 bg-surface-container-lowest border border-surface-container-high rounded-lg font-bold text-white tracking-wider text-[11px]">Mastercard</span>
+<span class="px-2.5 py-1 bg-surface-container-lowest border border-surface-container-high rounded-lg font-bold text-white tracking-wider text-[11px]">AMEX</span>
+<span class="px-2.5 py-1 bg-surface-container-lowest border border-surface-container-high rounded-lg font-bold text-primary-container text-[11px]">PayPal</span>
+<span class="px-2.5 py-1 bg-surface-container-lowest border border-surface-container-high rounded-lg font-bold text-white text-[11px]">Stripe</span>
+</div>
+<p class="font-body-sm text-xs text-on-surface-variant pt-1">Garantía de reembolso de 14 días • Pagos locales en moneda nacional o USD • Facturación válida para instituciones educativas y de salud.</p>
+</div></section>
+</div>
+</main>
+<!-- Interactive JavaScript logic -->
+<script>
+    let currentMode = 'login';
+    let currentRole = 'resident';
+
+    function switchAuthMode(mode) {
+      currentMode = mode;
+      const tabLogin = document.getElementById('tab-login');
+      const tabRegister = document.getElementById('tab-register');
+      const fieldLicense = document.getElementById('field-license');
+      const ctaLabel = document.getElementById('cta-label');
+
+      if (mode === 'login') {
+        tabLogin.className = 'flex-1 py-2.5 text-center rounded-lg font-headline-sm text-xs font-semibold transition-all duration-200 bg-surface-container-high text-primary-container shadow-sm flex items-center justify-center space-x-2';
+        tabRegister.className = 'flex-1 py-2.5 text-center rounded-lg font-headline-sm text-xs font-semibold transition-all duration-200 text-on-surface-variant hover:text-white flex items-center justify-center space-x-2';
+        fieldLicense.classList.add('hidden');
+        fieldLicense.classList.remove('flex');
+        ctaLabel.textContent = 'Acceder al Portal Médico';
+      } else {
+        tabRegister.className = 'flex-1 py-2.5 text-center rounded-lg font-headline-sm text-xs font-semibold transition-all duration-200 bg-surface-container-high text-primary-container shadow-sm flex items-center justify-center space-x-2';
+        tabLogin.className = 'flex-1 py-2.5 text-center rounded-lg font-headline-sm text-xs font-semibold transition-all duration-200 text-on-surface-variant hover:text-white flex items-center justify-center space-x-2';
+        fieldLicense.classList.remove('hidden');
+        fieldLicense.classList.add('flex');
+        ctaLabel.textContent = 'Comenzar Formación Quirúrgica';
+      }
+    }
+
+    function selectRole(role) {
+      currentRole = role;
+      const cardRes = document.getElementById('role-resident');
+      const checkRes = document.getElementById('check-resident');
+      const cardSpec = document.getElementById('role-specialist');
+      const checkSpec = document.getElementById('check-specialist');
+
+      if (role === 'resident') {
+        cardRes.className = 'group text-left p-3.5 rounded-xl bg-surface-container-lowest border border-primary-container/80 shadow-[0_0_16px_rgba(0,229,255,0.18)] transition-all flex flex-col justify-between';
+        checkRes.className = 'w-5 h-5 rounded-full bg-primary-container text-surface-container-lowest flex items-center justify-center opacity-100';
+        
+        cardSpec.className = 'group text-left p-3.5 rounded-xl bg-surface-container-lowest border border-outline-variant/50 hover:border-outline-variant transition-all flex flex-col justify-between opacity-80 hover:opacity-100';
+        checkSpec.className = 'w-5 h-5 rounded-full bg-surface-container-high text-outline flex items-center justify-center opacity-0';
+      } else {
+        cardSpec.className = 'group text-left p-3.5 rounded-xl bg-surface-container-lowest border border-primary-container/80 shadow-[0_0_16px_rgba(0,229,255,0.18)] transition-all flex flex-col justify-between';
+        checkSpec.className = 'w-5 h-5 rounded-full bg-primary-container text-surface-container-lowest flex items-center justify-center opacity-100';
+        
+        cardRes.className = 'group text-left p-3.5 rounded-xl bg-surface-container-lowest border border-outline-variant/50 hover:border-outline-variant transition-all flex flex-col justify-between opacity-80 hover:opacity-100';
+        checkRes.className = 'w-5 h-5 rounded-full bg-surface-container-high text-outline flex items-center justify-center opacity-0';
+      }
+    }
+
+    function togglePassVisibility() {
+      const passField = document.getElementById('med-pass');
+      const passText = document.getElementById('pass-text');
+      const passIcon = document.getElementById('pass-icon');
+
+      if (passField.type === 'password') {
+        passField.type = 'text';
+        passText.textContent = 'Ocultar';
+        passIcon.textContent = 'visibility_off';
+      } else {
+        passField.type = 'password';
+        passText.textContent = 'Mostrar';
+        passIcon.textContent = 'visibility';
+      }
+    }
+
+    function calculateEntropy(val) {
+      const bar = document.getElementById('entropy-bar');
+      const dot = document.getElementById('pass-indicator-dot');
+      
+      if (!val || val.length === 0) {
+        bar.className = 'h-full bg-outline transition-all duration-300 w-1/4';
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-outline';
+        return;
+      }
+      
+      let score = 0;
+      if (val.length >= 8) score++;
+      if (/[A-Z]/.test(val)) score++;
+      if (/[0-9]/.test(val)) score++;
+      if (/[^A-Za-z0-9]/.test(val)) score++;
+
+      if (score <= 1) {
+        bar.className = 'h-full bg-error transition-all duration-300 w-1/4';
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-error animate-ping';
+      } else if (score === 2) {
+        bar.className = 'h-full bg-tertiary-container transition-all duration-300 w-2/4';
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-tertiary-container';
+      } else if (score === 3) {
+        bar.className = 'h-full bg-primary-container transition-all duration-300 w-3/4';
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-primary-container';
+      } else {
+        bar.className = 'h-full bg-secondary transition-all duration-300 w-full';
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-secondary';
+      }
+    }
+  </script>
+
+
+</body></html>

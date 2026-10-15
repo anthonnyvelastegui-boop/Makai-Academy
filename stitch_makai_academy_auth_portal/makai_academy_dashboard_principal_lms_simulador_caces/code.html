@@ -1,0 +1,741 @@
+<!DOCTYPE html><html class="dark" lang="es"><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary": "#c3f5ff", "error": "#ffb4ab", "on-primary-fixed": "#001f24", "surface-container-lowest": "#0b0e13", "on-surface-variant": "#bac9cc", "on-error-container": "#ffdad6", "secondary-fixed": "#acf847", "inverse-primary": "#006875", "on-secondary-fixed": "#102000", "tertiary-container": "#ffc3b0", "background": "#111319", "on-primary-container": "#00626e", "secondary-fixed-dim": "#91db2a", "on-tertiary": "#5d1900", "surface-container-highest": "#32353b", "on-background": "#e1e2ea", "inverse-on-surface": "#2e3036", "on-secondary": "#1f3700", "secondary": "#94de2d", "secondary-container": "#7ac100", "tertiary": "#ffe8e1", "tertiary-fixed-dim": "#ffb59d", "on-primary": "#00363d", "primary-fixed": "#9cf0ff", "error-container": "#93000a", "surface-dim": "#111319", "surface-container": "#1d2025", "on-surface": "#e1e2ea", "on-error": "#690005", "surface": "#111319", "on-secondary-fixed-variant": "#304f00", "primary-container": "#00e5ff", "on-secondary-container": "#2c4900", "inverse-surface": "#e1e2ea", "surface-bright": "#36393f", "on-primary-fixed-variant": "#004f58", "surface-container-high": "#272a30", "surface-container-low": "#191c21", "outline-variant": "#3b494c", "on-tertiary-fixed-variant": "#832600", "primary-fixed-dim": "#00daf3", "on-tertiary-fixed": "#390c00", "tertiary-fixed": "#ffdbd0", "on-tertiary-container": "#a23200", "outline": "#849396", "surface-tint": "#00daf3", "surface-variant": "#32353b" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-md": "1rem", "margin": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem" }, "fontFamily": { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["JetBrains Mono"], "headline-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-sm": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-xl": ["44px", { "lineHeight": "54px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary": "#c3f5ff", "error": "#ffb4ab", "on-primary-fixed": "#001f24", "surface-container-lowest": "#0b0e13", "on-surface-variant": "#bac9cc", "on-error-container": "#ffdad6", "secondary-fixed": "#acf847", "inverse-primary": "#006875", "on-secondary-fixed": "#102000", "tertiary-container": "#ffc3b0", "background": "#111319", "on-primary-container": "#00626e", "secondary-fixed-dim": "#91db2a", "on-tertiary": "#5d1900", "surface-container-highest": "#32353b", "on-background": "#e1e2ea", "inverse-on-surface": "#2e3036", "on-secondary": "#1f3700", "secondary": "#94de2d", "secondary-container": "#7ac100", "tertiary": "#ffe8e1", "tertiary-fixed-dim": "#ffb59d", "on-primary": "#00363d", "primary-fixed": "#9cf0ff", "error-container": "#93000a", "surface-dim": "#111319", "surface-container": "#1d2025", "on-surface": "#e1e2ea", "on-error": "#690005", "surface": "#111319", "on-secondary-fixed-variant": "#304f00", "primary-container": "#00e5ff", "on-secondary-container": "#2c4900", "inverse-surface": "#e1e2ea", "surface-bright": "#36393f", "on-primary-fixed-variant": "#004f58", "surface-container-high": "#272a30", "surface-container-low": "#191c21", "outline-variant": "#3b494c", "on-tertiary-fixed-variant": "#832600", "primary-fixed-dim": "#00daf3", "on-tertiary-fixed": "#390c00", "tertiary-fixed": "#ffdbd0", "on-tertiary-container": "#a23200", "outline": "#849396", "surface-tint": "#00daf3", "surface-variant": "#32353b" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-md": "1rem", "margin": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem" }, "fontFamily": { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["JetBrains Mono"], "headline-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-sm": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-xl": ["44px", { "lineHeight": "54px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "700" }] } } } };</script><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary": "#c3f5ff", "error": "#ffb4ab", "on-primary-fixed": "#001f24", "surface-container-lowest": "#0b0e13", "on-surface-variant": "#bac9cc", "on-error-container": "#ffdad6", "secondary-fixed": "#acf847", "inverse-primary": "#006875", "on-secondary-fixed": "#102000", "tertiary-container": "#ffc3b0", "background": "#111319", "on-primary-container": "#00626e", "secondary-fixed-dim": "#91db2a", "on-tertiary": "#5d1900", "surface-container-highest": "#32353b", "on-background": "#e1e2ea", "inverse-on-surface": "#2e3036", "on-secondary": "#1f3700", "secondary": "#94de2d", "secondary-container": "#7ac100", "tertiary": "#ffe8e1", "tertiary-fixed-dim": "#ffb59d", "on-primary": "#00363d", "primary-fixed": "#9cf0ff", "error-container": "#93000a", "surface-dim": "#111319", "surface-container": "#1d2025", "on-surface": "#e1e2ea", "on-error": "#690005", "surface": "#111319", "on-secondary-fixed-variant": "#304f00", "primary-container": "#00e5ff", "on-secondary-container": "#2c4900", "inverse-surface": "#e1e2ea", "surface-bright": "#36393f", "on-primary-fixed-variant": "#004f58", "surface-container-high": "#272a30", "surface-container-low": "#191c21", "outline-variant": "#3b494c", "on-tertiary-fixed-variant": "#832600", "primary-fixed-dim": "#00daf3", "on-tertiary-fixed": "#390c00", "tertiary-fixed": "#ffdbd0", "on-tertiary-container": "#a23200", "outline": "#849396", "surface-tint": "#00daf3", "surface-variant": "#32353b" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-md": "1rem", "margin": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem" }, "fontFamily": { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["JetBrains Mono"], "headline-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-sm": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-xl": ["44px", { "lineHeight": "54px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "700" }] } } } };</script><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary": "#c3f5ff", "error": "#ffb4ab", "on-primary-fixed": "#001f24", "surface-container-lowest": "#0b0e13", "on-surface-variant": "#bac9cc", "on-error-container": "#ffdad6", "secondary-fixed": "#acf847", "inverse-primary": "#006875", "on-secondary-fixed": "#102000", "tertiary-container": "#ffc3b0", "background": "#111319", "on-primary-container": "#00626e", "secondary-fixed-dim": "#91db2a", "on-tertiary": "#5d1900", "surface-container-highest": "#32353b", "on-background": "#e1e2ea", "inverse-on-surface": "#2e3036", "on-secondary": "#1f3700", "secondary": "#94de2d", "secondary-container": "#7ac100", "tertiary": "#ffe8e1", "tertiary-fixed-dim": "#ffb59d", "on-primary": "#00363d", "primary-fixed": "#9cf0ff", "error-container": "#93000a", "surface-dim": "#111319", "surface-container": "#1d2025", "on-surface": "#e1e2ea", "on-error": "#690005", "surface": "#111319", "on-secondary-fixed-variant": "#304f00", "primary-container": "#00e5ff", "on-secondary-container": "#2c4900", "inverse-surface": "#e1e2ea", "surface-bright": "#36393f", "on-primary-fixed-variant": "#004f58", "surface-container-high": "#272a30", "surface-container-low": "#191c21", "outline-variant": "#3b494c", "on-tertiary-fixed-variant": "#832600", "primary-fixed-dim": "#00daf3", "on-tertiary-fixed": "#390c00", "tertiary-fixed": "#ffdbd0", "on-tertiary-container": "#a23200", "outline": "#849396", "surface-tint": "#00daf3", "surface-variant": "#32353b" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-md": "1rem", "margin": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem" }, "fontFamily": { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["JetBrains Mono"], "headline-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-sm": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-xl": ["44px", { "lineHeight": "54px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "700" }] } } } };</script><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary": "#c3f5ff", "error": "#ffb4ab", "on-primary-fixed": "#001f24", "surface-container-lowest": "#0b0e13", "on-surface-variant": "#bac9cc", "on-error-container": "#ffdad6", "secondary-fixed": "#acf847", "inverse-primary": "#006875", "on-secondary-fixed": "#102000", "tertiary-container": "#ffc3b0", "background": "#111319", "on-primary-container": "#00626e", "secondary-fixed-dim": "#91db2a", "on-tertiary": "#5d1900", "surface-container-highest": "#32353b", "on-background": "#e1e2ea", "inverse-on-surface": "#2e3036", "on-secondary": "#1f3700", "secondary": "#94de2d", "secondary-container": "#7ac100", "tertiary": "#ffe8e1", "tertiary-fixed-dim": "#ffb59d", "on-primary": "#00363d", "primary-fixed": "#9cf0ff", "error-container": "#93000a", "surface-dim": "#111319", "surface-container": "#1d2025", "on-surface": "#e1e2ea", "on-error": "#690005", "surface": "#111319", "on-secondary-fixed-variant": "#304f00", "primary-container": "#00e5ff", "on-secondary-container": "#2c4900", "inverse-surface": "#e1e2ea", "surface-bright": "#36393f", "on-primary-fixed-variant": "#004f58", "surface-container-high": "#272a30", "surface-container-low": "#191c21", "outline-variant": "#3b494c", "on-tertiary-fixed-variant": "#832600", "primary-fixed-dim": "#00daf3", "on-tertiary-fixed": "#390c00", "tertiary-fixed": "#ffdbd0", "on-tertiary-container": "#a23200", "outline": "#849396", "surface-tint": "#00daf3", "surface-variant": "#32353b" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-md": "1rem", "margin": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem" }, "fontFamily": { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["JetBrains Mono"], "headline-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-sm": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-xl": ["44px", { "lineHeight": "54px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "700" }] } } } };</script><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center p-1"><span class="material-symbols-outlined text-primary-container text-2xl">vital_signs</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">MAKAI ACADEMY</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Med Informatics</span></div></div><div class="px-space-md mt-space-md mb-space-sm"><div class="bg-surface-container-low px-space-md py-space-sm rounded-xl flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-secondary uppercase">Simulador CACES v4.8</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">MED-EC</span></div></div><nav class="flex flex-col gap-1 px-space-sm mt-space-sm" data-active-classes="bg-primary-container text-on-primary-fixed font-bold rounded-xl shadow-[0_0_16px_rgba(0,229,255,0.25)]"><a aria-current="page" class="group flex items-center justify-between px-space-md py-space-sm transition-all bg-primary-container text-on-primary-fixed font-bold rounded-xl shadow-[0_0_16px_rgba(0,229,255,0.25)]" data-path="dashboard-lms" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl text-primary">space_dashboard</span><span class="font-body-md text-body-md">Dashboard LMS</span></div></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="simulador-caces" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl text-primary">clinical_notes</span><span class="font-body-md text-body-md">Simulador CACES</span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-high text-primary tracking-tight">ENARM/CACES</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="banco-de-preguntas" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl text-primary">quiz</span><span class="font-body-md text-body-md">Banco de Preguntas</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">4,250+</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="rotaciones-clinicas" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl text-primary">stethoscope</span><span class="font-body-md text-body-md">Rotaciones Clínicas</span></div></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="repeticion-espaciada" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl text-primary">style</span><span class="font-body-md text-body-md">Repetición Espaciada</span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-secondary/15 text-secondary">AnkiSync</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="metricas-desempeno" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl text-primary">ecg</span><span class="font-body-md text-body-md">Métricas &amp; Desempeño</span></div></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="mentoria-elite-vip" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl text-primary-container">stars</span><span class="font-body-md text-body-md">Mentoría Élite VIP</span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-primary-container/20 text-primary-fixed">VIP</span></a></nav></div><div class="px-space-md flex flex-col gap-space-sm"><div class="bg-surface-container-low p-space-md rounded-xl flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-secondary"><span class="material-symbols-outlined text-lg">database</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface">MedLib Ecuador 2025</span><span class="font-label-sm text-label-sm text-on-surface-variant">Guías MSP actualizadas</span></div></div><div class="flex items-center justify-between px-space-xs pt-space-xs text-on-surface-variant font-label-sm text-label-sm"><span>Makai Academic LMS</span><span class="text-primary">v2.4.1</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-primary text-xl pointer-events-none">search</span><input class="w-full bg-surface-container-lowest pl-11 pr-space-md py-2 rounded-xl text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary-container transition-all" placeholder="Buscar diagnósticos CIE-11, fármacos, vademécum, guías MSP..." type="text"></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-lowest"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant">PACS Sincronizado</span></div><button class="relative p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Dr. Alejandro Thome</span><span class="font-label-sm text-label-sm text-primary leading-none">Interno Rotativo</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary-container/40" src="https://lh3.googleusercontent.com/aida/AEtjO1VuUjxlCtlJiD3CNkKxH1IYHiODaNNJfLO5pNqhHLO8BYsoPK6jzvTVRh480h_us4LvWNFgs3ScdynSI5qjrOObh9xlnuVZOA4PHsBKf_euc8LFG2FFBSgecgmQUiF6vFSOlB_8IwPhkO1dpVyYLFRlsih_Du1PZ4CycsXLMtDlabHHHO_SbGIgmJAfHCXVd3mMlnVitlvGw1YeVSiLYT1wa5lQACAcMVDWJbX17-aanfcn0WTHtorqS5UuNQxcgAqgX-WsuOvSvg"></div></div></header><main class="relative w-full pt-16 bg-surface px-space-lg py-space-lg min-h-screen"><div class="flex flex-col w-full gap-space-lg">
+<!-- TOP CONTEXT TICKER & CLINICAL TELEMETRY PILL -->
+<div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-lowest px-space-lg py-space-sm rounded-xl">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-md text-label-md text-secondary">SERVIDOR CACES EVAL-NODE 04 :: ACTIVO</span>
+<span class="text-outline-variant font-label-sm">|</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Protocolo MSP Ecuador 2024-2025 • Validación Biomédica Ponderada</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sincronización AnkiSync / USMLE-CACES: <span class="text-primary font-semibold">100% OK</span></span>
+<div class="flex items-center gap-1.5 px-space-xs py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span>ID Matrícula: MED-EC-9941</span>
+</div>
+</div>
+</div>
+<!-- MODULE 1: SELECTOR ACADÉMICO (LMS Modular tipo Moodle Moderno) -->
+<section class="flex flex-col gap-space-md bg-surface-container-low p-space-lg rounded-xl shadow-md">
+<!-- Breadcrumbs & Degree Selector -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>PORTAL FCS</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span>CAMPUS CLÍNICO QUITO</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary font-semibold">SIMULADOR OFICIAL CACES</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">Centro de Alto Rendimiento Médico &amp; Acreditación CACES</h1>
+</div>
+<!-- Faculty Pill Selector -->
+<div class="flex flex-wrap items-center gap-space-xs bg-surface-container-lowest p-1.5 rounded-xl">
+<button class="px-space-md py-1.5 rounded-lg bg-primary text-on-primary-fixed font-headline-sm text-label-md font-semibold shadow-sm transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">medical_services</span>
+          Medicina Humana (FCS-EC)
+        </button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">local_hospital</span>
+          Enfermería &amp; Cuidados Críticos
+        </button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">dentistry</span>
+          Odontología Clínica
+        </button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">pregnant_woman</span>
+          Obstetricia &amp; Salud Materna
+        </button>
+</div>
+</div>
+<!-- Rotations Sub-filter Bar & Progress Meter -->
+<div class="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-md pt-space-xs">
+<!-- Horizontal Sub-filters -->
+<div class="flex items-center gap-2 overflow-x-auto w-full xl:w-auto pb-1">
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary-fixed font-label-md text-label-md font-bold shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">stethoscope</span>
+          Medicina Interna &amp; Terapéutica
+        </button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">child_care</span>
+          Pediatría &amp; Neonatología
+        </button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">surgical</span>
+          Cirugía General &amp; Trauma
+        </button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">female</span>
+          Ginecología &amp; Obstetricia
+        </button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">public</span>
+          Salud Pública &amp; Epidemiología
+        </button>
+</div>
+<!-- Academic status badge & Cyan progress indicator -->
+<div class="flex items-center gap-space-md w-full xl:w-auto justify-between xl:justify-end bg-surface-container-lowest px-space-md py-2 rounded-xl">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-primary">Semestre X • Internado Rotativo</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">74% de cobertura temática oficial CACES 2025</span>
+</div>
+<div class="w-36 flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm text-primary font-bold">
+<span>74%</span>
+<span>111/150 ejes</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary-fixed-dim to-primary-container rounded-full" style="width: 74%;"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MODULE 2: LANZADOR DE SIMULACROS CACES (Hero Card Central) -->
+<section class="relative bg-surface-container-low rounded-xl p-space-lg overflow-hidden shadow-xl">
+<div class="absolute -right-16 -top-16 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -left-16 -bottom-16 w-80 h-80 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 xl:grid-cols-12 gap-space-xl">
+<!-- Left Hero Details -->
+<div class="xl:col-span-8 flex flex-col justify-between gap-space-lg">
+<div class="flex flex-col gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-3 py-1 rounded-full bg-primary-container/15 text-primary font-label-sm text-label-sm font-semibold tracking-wider uppercase flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">neurology</span>
+              Bancos Infinitos con IA Clínica v4.4 • Validador CACES / AACAA 2025
+            </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+              Convocatoria Nacional Julio 2025
+            </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+            Lanzador de Simulacro Oficial <span class="text-primary-container">CACES 2025</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            Entorno estandarizado de alta fidelidad. Algoritmo adaptativo calibrado según la matriz ponderada de preguntas del Consejo de Aseguramiento de la Calidad de la Educación Superior.
+          </p>
+</div>
+<!-- Mode Selectors Bento Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Mode 1: Selected -->
+<div class="p-space-md rounded-xl bg-surface-container-high text-on-surface cursor-pointer shadow-md transition-all relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-primary-container text-2xl">timer</span>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-fixed font-label-sm text-label-sm font-bold">SELECCIONADO</span>
+</div>
+<div class="mt-space-md">
+<div class="font-headline-sm text-headline-sm text-primary">Modo Estándar</div>
+<div class="font-body-sm text-body-sm text-on-surface font-semibold mt-0.5">150 Casos • 180 min</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Rigor Oficial • Tiempo bloqueado • Ponderación Real</div>
+</div>
+</div>
+<!-- Mode 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container text-on-surface cursor-pointer transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-secondary text-2xl">bolt</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Rápido</span>
+</div>
+<div class="mt-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface">Práctica Rápida</div>
+<div class="font-body-sm text-body-sm text-secondary font-semibold mt-0.5">40 Casos • 45 min</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Guardias Libres • Retroalimentación reactivo por reactivo</div>
+</div>
+</div>
+<!-- Mode 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container text-on-surface cursor-pointer transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-2xl">warning</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm">Focalizado</span>
+</div>
+<div class="mt-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface">Refuerzo Crítico</div>
+<div class="font-body-sm text-body-sm text-tertiary-fixed-dim font-semibold mt-0.5">60 Casos IA</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Enfocado en Fallos Previos &amp; Ginecología Código Rojo</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<button class="px-space-xl py-3 rounded-xl bg-primary-container text-on-primary-fixed font-headline-sm text-headline-sm font-bold shadow-lg hover:shadow-cyan-500/20 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-2xl">play_circle</span>
+            Iniciar Nuevo Simulacro CACES
+          </button>
+<button class="px-space-lg py-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-body-md text-body-md font-semibold transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg text-primary">tune</span>
+            Configurar Banco
+          </button>
+<button class="px-space-md py-3 rounded-xl bg-surface-container-lowest hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">history</span>
+            Ver Historial (8)
+          </button>
+</div>
+</div>
+<!-- Right Status Widget & Calibration Board -->
+<div class="xl:col-span-4 flex flex-col gap-space-md bg-surface-container-lowest p-space-lg rounded-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-xl">analytics</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Calibración Activa</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary/15 text-secondary font-label-sm text-label-sm font-bold">EN REGLA</span>
+</div>
+<!-- Big Score Highlight -->
+<div class="flex items-center gap-space-lg bg-surface-container-high p-space-md rounded-xl">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Último Score Calibrado</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">87.4</span>
+<span class="font-label-md text-label-md text-on-surface-variant">/ 100 pts</span>
+</div>
+</div>
+<div class="w-16 h-16 ml-auto flex items-center justify-center rounded-xl bg-primary-container/15 text-primary-container">
+<span class="material-symbols-outlined text-3xl">award_star</span>
+</div>
+</div>
+<!-- Metrics Inventory Grid -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Reactivos Auditados</div>
+<div class="font-headline-sm text-headline-sm text-on-surface mt-1">12,480</div>
+<div class="font-label-sm text-label-sm text-secondary">MSP 2025 verificado</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Percentil Teórico</div>
+<div class="font-headline-sm text-headline-sm text-secondary mt-1">Top 6%</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Población Nacional</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Simulacros Rendidos</div>
+<div class="font-headline-sm text-headline-sm text-on-surface mt-1">8 / 12</div>
+<div class="font-label-sm text-label-sm text-primary">66% del ciclo</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Corte CACES Oficial</div>
+<div class="font-headline-sm text-headline-sm text-error mt-1">70.0 pts</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Mínimo legal</div>
+</div>
+</div>
+<div class="mt-auto pt-space-xs flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-primary">info</span>
+<span>Próxima actualización de banco reactivos: 18 Horas</span>
+</div>
+</div>
+</div>
+</section>
+<!-- MODULE 3: VISTA DE EXAMEN / SIMULACRO ACTIVO (Focus Mode Quirúrgico) -->
+<section class="flex flex-col gap-space-md bg-surface-container-low p-space-lg rounded-xl shadow-xl">
+<!-- Focus Header Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-lowest px-space-lg py-space-md rounded-xl">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-error animate-ping"></span>
+<span class="font-label-md text-label-md text-on-surface font-bold tracking-wider">SIMULADOR ACTIVO • FOCUS MODE QUIRÚRGICO</span>
+</div>
+<span class="px-2.5 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm">
+          Simulación CACES #28 • Oficial 150Q (ID: CACES-2025-9941X)
+        </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">fullscreen</span>
+          Pantalla Completa
+        </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">pause</span>
+          Pausar Sesión
+        </button>
+</div>
+</div>
+<!-- Main Active Workspace Split: Question Vignette + Right Question Matrix Sidebar -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Center-Left: Clinical Vignette & Answer Mechanics (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Timer HUD Panel -->
+<div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-lowest p-space-md rounded-xl">
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Tiempo Restante de Evaluación</span>
+<div class="font-label-md text-headline-lg font-bold text-primary-container tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-2xl">hourglass_top</span>
+                02:41:09
+              </div>
+</div>
+<div class="hidden sm:flex flex-col pl-space-md border-l border-outline-variant/30">
+<span class="font-label-sm text-label-sm text-secondary font-bold">Ritmo Sugerido: 1.2 min/reactivo</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Progreso actual: Reactivo 47 de 150 • <span class="text-secondary font-semibold">RITMO OK</span></span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Aumentar fuente">
+<span class="material-symbols-outlined text-sm">format_size</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Filtro de contraste clínico">
+<span class="material-symbols-outlined text-sm">contrast</span>
+</button>
+</div>
+</div>
+<!-- Clinical Case Card -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col gap-space-md">
+<!-- Question Title & Metadata -->
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-primary-container/20 text-primary-container font-label-md text-label-md font-bold">
+                REACTIVO #47
+              </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+                Cardiología / Urgencias &amp; Hemodinamia
+              </span>
+<span class="px-2 py-0.5 rounded bg-error-container/30 text-error font-label-sm text-label-sm">
+                Ponderación Alta CACES
+              </span>
+</div>
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-base">bookmark_add</span>
+              Guardar en Flashcards
+            </button>
+</div>
+<!-- Vignette Narrative -->
+<div class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+            Varón de 58 años, antecedentes de hipertensión arterial no controlada y tabaquismo activo (20 paquetes/año). Acude al servicio de urgencias por presentar cuadro de 90 minutos de evolución caracterizado por dolor precordial opresivo de intensidad 9/10, irradiado a mandíbula y miembro superior izquierdo, diaforesis profusa y náuseas.
+          </div>
+<!-- Vital Signs Strip -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs bg-surface-container-lowest p-space-sm rounded-lg font-label-sm text-label-sm">
+<div class="flex flex-col">
+<span class="text-on-surface-variant">Presión Arterial</span>
+<span class="font-bold text-error">85/55 mmHg (Hipotensión)</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant">Frecuencia Cardíaca</span>
+<span class="font-bold text-error">52 lpm (Bradicardia)</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant">Frec. Respiratoria</span>
+<span class="font-bold text-on-surface">20 rpm</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant">SatO2 (Aire amb.)</span>
+<span class="font-bold text-secondary">94%</span>
+</div>
+</div>
+<!-- Interactive ECG Telemetry Strip (Vector ECG Waveform with marked STEMI) -->
+<div class="flex flex-col gap-2 bg-surface-container-lowest p-space-md rounded-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-lg">ecg</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Telemetría / Electrocardiograma 12 Derivaciones (Registro Monitor Urgencias)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-error-container/40 text-error font-label-sm text-label-sm font-semibold">SUPRADESNIVEL ST DII, DIII, aVF (+3mm)</span>
+</div>
+<!-- Stylized ECG SVG Canvas -->
+<div class="relative w-full h-28 bg-surface-container-high/60 rounded-lg overflow-hidden flex items-center justify-center p-2">
+<!-- Grid background -->
+<svg class="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="16" id="ecg-grid" patternUnits="userSpaceOnUse" width="16">
+<path d="M 16 0 L 0 0 0 16" fill="none" stroke="#00e5ff" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#ecg-grid)" height="100%" width="100%"></rect>
+</svg>
+<!-- Neon ECG Path with ST Elevation marker -->
+<svg class="w-full h-full text-primary-container" preserveAspectRatio="none" viewBox="0 0 900 100">
+<!-- Flatline lead-in -->
+<path class="drop-shadow-[0_0_8px_rgba(0,229,255,0.8)]" d="
+                  M 0 50 L 50 50 
+                  L 65 46 L 75 50 
+                  L 85 50 L 95 62 L 105 15 L 115 80 L 125 50 
+                  L 135 32 L 165 32 L 180 50 
+                  L 240 50 
+                  L 255 46 L 265 50 
+                  L 275 50 L 285 62 L 295 15 L 305 80 L 315 50 
+                  L 325 32 L 355 32 L 370 50 
+                  L 430 50 
+                  L 445 46 L 455 50 
+                  L 465 50 L 475 62 L 485 15 L 495 80 L 505 50 
+                  L 515 32 L 545 32 L 560 50 
+                  L 620 50 
+                  L 635 46 L 645 50 
+                  L 655 50 L 665 62 L 675 15 L 685 80 L 695 50 
+                  L 705 32 L 735 32 L 750 50 
+                  L 810 50 
+                  L 825 46 L 835 50 
+                  L 845 50 L 855 62 L 865 15 L 875 80 L 885 50 L 900 50
+                " fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+<!-- Annotation Badge pinned on ST segment -->
+<div class="absolute left-[34%] top-3 px-2 py-0.5 rounded bg-error text-on-error font-label-sm text-label-sm font-bold shadow-md">
+                ▲ Lesión Subepicárdica Cara Inferior con compromiso VD probable
+              </div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Vel: 25mm/s • Volt: 10mm/mV • Derivación DII Continuo</span>
+<span class="text-primary">Alerta: Evitar Nitratos y Betabloqueantes por repercusión hemodinámica</span>
+</div>
+</div>
+<!-- Clinical Question -->
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold pt-space-xs">
+            ¿Cuál es la conducta diagnóstica y terapéutica prioritaria de mayor impacto en la supervivencia?
+          </div>
+<!-- Multiple Choice Options -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<!-- Option A -->
+<label class="group flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-high hover:bg-surface-container-highest cursor-pointer transition-all">
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest flex items-center justify-center font-label-md text-label-md text-on-surface-variant group-hover:text-primary shrink-0 mt-0.5">
+                A
+              </div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Administración sublingual inmediata de Dinitrato de Isosorbida 5 mg, Betabloqueante endovenoso (Metoprolol 5 mg) y solicitar Troponina I ultrasensible seriada a las 3 horas.</span>
+</div>
+</label>
+<!-- Option B: Selected with Rationale Checkmark -->
+<label class="group flex items-start gap-space-md p-space-md rounded-xl bg-primary-container/10 text-on-surface cursor-pointer shadow-md transition-all">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center font-label-md text-label-md font-bold shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-bold text-primary">OPCIÓN B (SELECCIONADA)</span>
+<span class="px-2 py-0.2 rounded bg-secondary/20 text-secondary font-label-sm text-label-sm font-semibold">Ponderación MSP CACES: Correcta</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">
+                  Carga de fluidos isotónicos IV, DAPT con Ácido Acetilsalicílico 300 mg + Ticagrelor 180 mg y activación prioritaria del laboratorio de hemodinámica (ICP primaria &lt;90 min). Realizar derivaciones derechas (V3R-V4R).
+                </span>
+<div class="mt-1 p-2 rounded-lg bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm">
+<strong class="text-primary font-semibold">Racional CACES:</strong> En infarto inferior con hipotensión y bradicardia debe sospecharse extensión a ventrículo derecho; los nitratos están contraindicados y la reperfusión urgente es mandataria.
+                </div>
+</div>
+</label>
+<!-- Option C -->
+<label class="group flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-high hover:bg-surface-container-highest cursor-pointer transition-all">
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest flex items-center justify-center font-label-md text-label-md text-on-surface-variant group-hover:text-primary shrink-0 mt-0.5">
+                C
+              </div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Iniciar fibrinólisis inmediata con Estreptoquinasa 1.5 millones UI en 60 minutos sin requerimiento de terapia antiplaquetaria dual para prevenir sangrado masivo.</span>
+</div>
+</label>
+<!-- Option D -->
+<label class="group flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-high hover:bg-surface-container-highest cursor-pointer transition-all">
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest flex items-center justify-center font-label-md text-label-md text-on-surface-variant group-hover:text-primary shrink-0 mt-0.5">
+                D
+              </div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Manejo conservador en sala de observación general con Enoxaparina 1 mg/kg SC y ecocardiograma transtorácico electivo dentro de las primeras 48 horas.</span>
+</div>
+</label>
+</div>
+<!-- Bottom Exam Action Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-md mt-space-sm border-t border-surface-container-highest/60">
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-tertiary-fixed-dim">flag</span>
+                Marcar para Revisión
+              </button>
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">calculate</span>
+                Calc. Médica
+              </button>
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">science</span>
+                Lab Values
+              </button>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-body-md text-body-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+                Anterior
+              </button>
+<button class="px-space-lg py-2 rounded-lg bg-primary-container text-on-primary-fixed font-headline-sm text-headline-sm font-bold shadow-md hover:shadow-cyan-400/20 transition-all flex items-center gap-1">
+                Siguiente Pregunta
+                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Question Matrix Navigation Sidebar (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md bg-surface-container-lowest p-space-md rounded-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-lg">grid_view</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Matriz de Reactivos</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">47 / 150</span>
+</div>
+<!-- Legend -->
+<div class="flex flex-wrap items-center gap-space-sm text-label-sm font-label-sm bg-surface-container p-space-xs rounded-lg">
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded bg-secondary"></span>
+<span class="text-on-surface-variant">Respondida (46)</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded bg-tertiary-fixed-dim"></span>
+<span class="text-on-surface-variant">En duda (4)</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded bg-surface-container-highest"></span>
+<span class="text-on-surface-variant">Pendiente (100)</span>
+</div>
+</div>
+<!-- The 56 questions grid preview (Simulating active exam sheet) -->
+<div class="grid grid-cols-7 sm:grid-cols-8 gap-1.5 max-h-[380px] overflow-y-auto p-1">
+<!-- 1 to 46: Completed (Secondary/Lime) -->
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">01</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">02</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">03</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">04</div>
+<div class="h-8 rounded bg-tertiary-fixed-dim/30 text-tertiary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-tertiary">05</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">06</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">07</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">08</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">09</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">10</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">11</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">12</div>
+<div class="h-8 rounded bg-tertiary-fixed-dim/30 text-tertiary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-tertiary">13</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">14</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">15</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">16</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">17</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">18</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">19</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">20</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">21</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">22</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">23</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">24</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">25</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">26</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">27</div>
+<div class="h-8 rounded bg-tertiary-fixed-dim/30 text-tertiary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-tertiary">28</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">29</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">30</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">31</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">32</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">33</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">34</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">35</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">36</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">37</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">38</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">39</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">40</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">41</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">42</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">43</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">44</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">45</div>
+<div class="h-8 rounded bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold cursor-pointer hover:ring-1 hover:ring-secondary">46</div>
+<!-- Current Item 47 (Cyan Glow) -->
+<div class="h-8 rounded bg-primary-container text-on-primary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold shadow-md shadow-cyan-400/40">47</div>
+<!-- Pending items 48 to 56 -->
+<div class="h-8 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm cursor-pointer hover:bg-surface-container-highest">48</div>
+<div class="h-8 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm cursor-pointer hover:bg-surface-container-highest">49</div>
+<div class="h-8 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm cursor-pointer hover:bg-surface-container-highest">50</div>
+<div class="h-8 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm cursor-pointer hover:bg-surface-container-highest">51</div>
+<div class="h-8 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm cursor-pointer hover:bg-surface-container-highest">52</div>
+<div class="h-8 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm cursor-pointer hover:bg-surface-container-highest">53</div>
+<div class="h-8 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm cursor-pointer hover:bg-surface-container-highest">54</div>
+<div class="h-8 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm cursor-pointer hover:bg-surface-container-highest">55</div>
+<div class="h-8 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm cursor-pointer hover:bg-surface-container-highest">56</div>
+</div>
+<div class="pt-space-sm mt-auto flex flex-col gap-2">
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-xl">psychology</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Tutor AI Makai Activo</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sugerencia: Revisar criterios Sgarbossa en bloque posterior</span>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-xl bg-error-container/40 hover:bg-error-container text-on-error-container font-headline-sm text-label-md font-bold transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+            Concluir &amp; Enviar a Calificar
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- MODULE 4: PANEL DE RETROALIMENTACIÓN & ANALÍTICA DE COMPETENCIAS -->
+<section class="flex flex-col gap-space-md bg-surface-container-low p-space-lg rounded-xl shadow-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container/20 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">insights</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface">Auditoría Predictiva CACES • Rendimiento Académico &amp; Curva de Competencias</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Modelado estocástico basado en los últimos 8 simulacros estandarizados</span>
+</div>
+</div>
+<button class="px-space-md py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-body-md text-body-md transition-colors flex items-center gap-2 self-start sm:self-auto">
+<span class="material-symbols-outlined text-lg">download</span>
+        Descargar Informe Acreditación PDF
+      </button>
+</div>
+<!-- 3 Analytic Columns -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Column 1: Puntuación Global & Percentil -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Último Simulacro Completo</span>
+<span class="px-2 py-0.5 rounded bg-secondary/15 text-secondary font-label-sm text-label-sm font-semibold">SOBRESALIENTE</span>
+</div>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">87.4</span>
+<span class="font-label-md text-label-md text-on-surface-variant">/ 100</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-secondary/10 text-secondary font-label-sm text-label-sm w-fit mt-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+            Percentil 94% CACES Nacional
+          </div>
+</div>
+<!-- Metric Pills -->
+<div class="flex flex-col gap-2 pt-space-md mt-space-sm border-t border-surface-container-highest/60">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Aciertos Netos</span>
+<span class="font-bold text-on-surface">131 / 150 (87.3%)</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Tiempo Promedio / Pregunta</span>
+<span class="font-bold text-primary">54 seg (Ideal &lt; 72 seg)</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Retención a 7 Días</span>
+<span class="font-bold text-secondary">91.8%</span>
+</div>
+</div>
+</div>
+<!-- Column 2: Competencias por Área (Matriz CACES) con Alerta Magenta -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Competencias por Área (Matriz CACES)</span>
+<span class="material-symbols-outlined text-primary text-base">donut_large</span>
+</div>
+<!-- Skill 1 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-on-surface font-medium">Cardiología &amp; Hemodinámica</span>
+<span class="text-primary font-bold">92%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 92%;"></div>
+</div>
+</div>
+<!-- Skill 2 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-on-surface font-medium">Pediatría &amp; Neonatología</span>
+<span class="text-secondary font-bold">88%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 88%;"></div>
+</div>
+</div>
+<!-- Skill 3 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-on-surface font-medium">Cirugía General &amp; Trauma</span>
+<span class="text-on-surface font-bold">85%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-surface-bright rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Skill 4 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-on-surface font-medium">Farmacología Clínica</span>
+<span class="text-tertiary-fixed-dim font-bold">68%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed-dim rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+<!-- Skill 5: Critical Warning with Magenta Accent -->
+<div class="flex flex-col gap-1 p-2 rounded-lg bg-error-container/20 border-l-2 border-error">
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">warning</span>
+                Gineco &amp; Obstetricia (ÁREA CRÍTICA)
+              </span>
+<span class="text-error font-bold">61%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 61%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary-container mt-1">Foco urgente: Preeclampsia severa y Hemorragia Postparto Código Rojo</span>
+</div>
+</div>
+<button class="mt-space-sm w-full py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm">tune</span>
+          Generar simulacro de debilidades
+        </button>
+</div>
+<!-- Column 3: Curva Histórica de Rendimiento (SVG Inline Chart) -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Curva Histórica de Rendimiento</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">+25.4 pts ganancia</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Simulacros Oficiales S-1 a S-8 (Últimas 6 semanas)</span>
+<!-- Inline Vector SVG Sparkline / Multi-node Progress Chart -->
+<div class="relative w-full h-36 bg-surface-container-high/40 rounded-lg p-2 mt-2 flex flex-col justify-between">
+<!-- Cutoff reference line (70 points) -->
+<div class="absolute left-2 right-2 top-[55%] border-b border-dashed border-error/50 flex justify-between items-center z-0">
+<span class="bg-surface-container-lowest px-1 text-[10px] font-label-sm text-error font-semibold">Corte CACES (70 pts Mínimo)</span>
+<span class="bg-surface-container-lowest px-1 text-[10px] font-label-sm text-error">Requisito legal</span>
+</div>
+<!-- SVG Data Points & Trendline -->
+<svg class="w-full h-full relative z-10" preserveAspectRatio="none" viewBox="0 0 320 100">
+<!-- Glow gradient definition -->
+<defs>
+<linearGradient id="chart-glow" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#00e5ff" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#00e5ff" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+<!-- Filled curve -->
+<polygon fill="url(#chart-glow)" points="20,80 60,74 100,68 140,55 180,48 220,38 260,32 300,18 300,100 20,100"></polygon>
+<!-- Stroke line -->
+<polyline fill="none" points="20,80 60,74 100,68 140,55 180,48 220,38 260,32 300,18" stroke="#00e5ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<!-- Data nodes -->
+<circle cx="20" cy="80" fill="#111319" r="3.5" stroke="#00e5ff" stroke-width="2"></circle>
+<circle cx="60" cy="74" fill="#111319" r="3" stroke="#00e5ff" stroke-width="1.5"></circle>
+<circle cx="100" cy="68" fill="#111319" r="3" stroke="#00e5ff" stroke-width="1.5"></circle>
+<circle cx="140" cy="55" fill="#111319" r="3" stroke="#00e5ff" stroke-width="1.5"></circle>
+<circle cx="180" cy="48" fill="#111319" r="3" stroke="#00e5ff" stroke-width="1.5"></circle>
+<circle cx="220" cy="38" fill="#111319" r="3" stroke="#00e5ff" stroke-width="1.5"></circle>
+<circle cx="260" cy="32" fill="#111319" r="3" stroke="#00e5ff" stroke-width="1.5"></circle>
+<!-- Current Peak Node -->
+<circle class="drop-shadow-[0_0_8px_rgba(148,222,45,0.8)]" cx="300" cy="18" fill="#94de2d" r="5" stroke="#111319" stroke-width="2"></circle>
+</svg>
+<!-- Node labels -->
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant pt-1 px-1">
+<span>S1 (62)</span>
+<span>S3 (71)</span>
+<span>S5 (79)</span>
+<span>S7 (83)</span>
+<span class="text-secondary font-bold">S8 (87.4)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-sm border-t border-surface-container-highest/60 text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Tendencia: <strong class="text-secondary">Ascenso constante</strong></span>
+<span class="text-on-surface-variant">Tasa Aprobación: <strong class="text-primary">100%</strong></span>
+</div>
+</div>
+</div>
+</section>
+</div></main></div></body></html>

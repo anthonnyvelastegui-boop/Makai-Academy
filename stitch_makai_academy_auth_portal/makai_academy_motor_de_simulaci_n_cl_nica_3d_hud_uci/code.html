@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-primary":"#006875","surface-container-lowest":"#0b0e13","on-secondary-container":"#2c4900","surface-bright":"#36393f","on-tertiary-fixed-variant":"#832600","outline-variant":"#3b494c","on-primary-container":"#00626e","error-container":"#93000a","tertiary-fixed":"#ffdbd0","on-tertiary":"#5d1900","on-tertiary-fixed":"#390c00","on-surface-variant":"#bac9cc","on-primary-fixed":"#001f24","on-tertiary-container":"#a23200","surface-dim":"#111319","surface-container":"#1d2025","surface-tint":"#00daf3","primary-fixed":"#9cf0ff","tertiary-container":"#ffc3b0","primary-fixed-dim":"#00daf3","on-primary-fixed-variant":"#004f58","error":"#ffb4ab","secondary-fixed":"#acf847","on-error-container":"#ffdad6","on-error":"#690005","outline":"#849396","on-secondary-fixed-variant":"#304f00","inverse-surface":"#e1e2ea","background":"#111319","inverse-on-surface":"#2e3036","on-primary":"#00363d","primary-container":"#00e5ff","primary":"#c3f5ff","surface-container-highest":"#32353b","on-secondary":"#1f3700","tertiary-fixed-dim":"#ffb59d","surface-variant":"#32353b","secondary-container":"#7ac100","on-secondary-fixed":"#102000","tertiary":"#ffe8e1","on-background":"#e1e2ea","surface-container-high":"#272a30","surface-container-low":"#191c21","secondary":"#94de2d","on-surface":"#e1e2ea","secondary-fixed-dim":"#91db2a","surface":"#111319"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem","margin-mobile":"1rem","space-xs":"0.25rem",margin:"2rem","space-sm":"0.5rem",gutter:"1.5rem","space-lg":"1.5rem","space-xl":"2.5rem","gutter-mobile":"1rem"},fontFamily:{"headline-xl":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-sm":["JetBrains Mono"],"headline-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-md":["JetBrains Mono"]},fontSize:{"headline-xl":["44px",{lineHeight:"54px",fontWeight:"700"}],"headline-lg-mobile":["24px",{lineHeight:"32px",fontWeight:"600"}],"headline-sm":["18px",{lineHeight:"24px",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"16px",fontWeight:"500"}],"headline-lg":["32px",{lineHeight:"40px",fontWeight:"600"}],"headline-md":["22px",{lineHeight:"28px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"headline-xl-mobile":["30px",{lineHeight:"38px",fontWeight:"700"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"400"}],"label-md":["13px",{lineHeight:"18px",fontWeight:"500"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest/95 backdrop-blur-2xl z-50 flex flex-col justify-between py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-space-lg"><div class="flex items-center gap-space-sm px-space-lg"><div class="flex items-center justify-center w-10 h-10 rounded-xl bg-surface-container-high text-primary-container shadow-[0_0_16px_rgba(0,229,255,0.2)]"><span class="material-symbols-outlined text-2xl">vital_signs</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">MAKAI</span><span class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant">ACADEMY • CLINICAL</span></div></div><div class="px-space-md"><div class="p-space-sm rounded-xl bg-surface-container-low/60 flex flex-col gap-space-xs"><div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>SUBSISTEMA</span><span class="text-secondary font-label-sm text-label-sm">CACES v4.2</span></div><div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden"><div class="bg-gradient-to-r from-primary-container to-secondary h-full w-4/5"></div></div></div></div><nav class="flex flex-col gap-1 px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl shadow-[0_0_24px_-4px_rgba(0,229,255,0.3)]"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="dashboard-lms" href="#"><span class="material-symbols-outlined">grid_view</span><span>Dashboard LMS</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="simulador-caces" href="#"><span class="material-symbols-outlined">assignment_turned_in</span><span>Simulador CACES</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="repeticion-espaciada" href="#"><span class="material-symbols-outlined">sync</span><span>Repetición Espaciada</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-all duration-200 bg-primary-container text-on-primary-container font-semibold rounded-xl shadow-[0_0_24px_-4px_rgba(0,229,255,0.3)]" data-path="motor-3d-uci" href="#"><span class="material-symbols-outlined">view_in_ar</span><span>Motor 3D UCI</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="banco-clinico" href="#"><span class="material-symbols-outlined">menu_book</span><span>Banco Clínico</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="metricas-desempeno" href="#"><span class="material-symbols-outlined">insights</span><span>Métricas &amp; Desempeño</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="mentoria-elite" href="#"><span class="material-symbols-outlined">school</span><span>Mentoría Élite</span></a></nav></div><div class="px-space-md flex flex-col gap-space-sm"><div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">LATENCIA RED</span><span class="font-label-md text-label-md text-secondary font-semibold">14 ms • SINCRO OK</span></div><span class="material-symbols-outlined text-secondary text-base">wifi_tethering</span></div><div class="flex items-center justify-between px-space-sm text-on-surface-variant font-label-sm text-label-sm"><span>TELEMETRÍA PACS</span><span class="text-primary font-label-sm text-label-sm">ONLINE</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-high/80 shadow-[0_0_24px_-4px_rgba(0,229,255,0.18)]"><span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span><span class="font-label-sm text-label-sm font-semibold tracking-wide text-primary-container uppercase">Simulador Clínico 3D</span><span class="text-outline font-label-sm text-label-sm">•</span><span class="font-label-sm text-label-sm text-on-surface font-medium">Caso UCI #104</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-xs text-secondary">ecg_heart</span><span>Monitor Hemodinámico Activo</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-1 bg-surface-container-low px-space-xs py-1 rounded-xl"><button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Audio del Simulador" type="button"><span class="material-symbols-outlined text-lg">volume_up</span></button><button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Pantalla Completa" type="button"><span class="material-symbols-outlined text-lg">fullscreen</span></button><button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Registro Clínico" type="button"><span class="material-symbols-outlined text-lg">notes</span></button></div><div class="flex items-center gap-space-sm pl-space-sm bg-surface-container-low/70 py-1 px-space-sm rounded-full"><div class="flex flex-col text-right hidden sm:flex"><span class="font-body-sm text-body-sm font-semibold text-on-surface leading-tight">Dr. Alejandro Ramos</span><span class="font-label-sm text-label-sm text-primary leading-none">Residente UCI • Nivel IV</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/30" src="https://lh3.googleusercontent.com/aida/AEtjO1VuUjxlCtlJiD3CNkKxH1IYHiODaNNJfLO5pNqhHLO8BYsoPK6jzvTVRh480h_us4LvWNFgs3ScdynSI5qjrOObh9xlnuVZOA4PHsBKf_euc8LFG2FFBSgecgmQUiF6vFSOlB_8IwPhkO1dpVyYLFRlsih_Du1PZ4CycsXLMtDlabHHHO_SbGIgmJAfHCXVd3mMlnVitlvGw1YeVSiLYT1wa5lQACAcMVDWJbX17-aanfcn0WTHtorqS5UuNQxcgAqgX-WsuOvSvg"/></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full p-space-md lg:p-space-lg gap-space-md bg-background text-on-surface">
+<!-- ========================================== -->
+<!-- 1. TOP HUD STATUS BAR & QUICK SCENARIO HEADER -->
+<!-- ========================================== -->
+<section class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-xl flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<!-- Left: Case Diagnostics & Identification -->
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm tracking-wider uppercase animate-pulse">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+          CÓDIGO ROJO ACTIVO
+        </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-primary-fixed-dim font-label-sm text-label-sm font-semibold">
+          ATLS 10ª ED. • SHOCK &amp; TRAUMA
+        </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">
+          SALA REANIMACIÓN UCI-ALPHA
+        </span>
+</div>
+<h1 class="font-headline-sm text-headline-sm text-primary tracking-tight truncate">
+        Caso UCI #104: Paciente Politraumatizado en Shock Hipovolémico Grado III &amp; Neumotórax a Tensión
+      </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Protocolo MSP/ATLS • Politrauma con compromiso ventilatorio e inestabilidad hemodinámica acelerada.
+      </p>
+</div>
+<!-- Center-Right: Telemetry Metrics & Scenario Controls -->
+<div class="flex items-center gap-space-md flex-wrap shrink-0">
+<!-- Physiological Stability Gauge -->
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-2 rounded-xl">
+<div class="relative w-11 h-11 flex items-center justify-center">
+<svg class="w-11 h-11 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="62, 100" stroke-linecap="round" stroke-width="3.2"></path>
+</svg>
+<span class="absolute font-label-sm text-label-sm text-on-surface font-bold">62%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">ESTABILIDAD FISIOLÓGICA</span>
+<span class="font-body-sm text-body-sm text-secondary font-semibold">Deterioro Dinámico</span>
+</div>
+</div>
+<!-- Chronometer Display -->
+<div class="flex flex-col bg-surface-container-low px-space-md py-2 rounded-xl text-center min-w-[110px]">
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-none">TIEMPO TRANSCURRIDO</span>
+<span class="font-label-md text-headline-sm text-primary-container font-mono tracking-widest font-bold" id="scenarioTimer">00:14:22</span>
+</div>
+<!-- Tactical HUD Control Buttons -->
+<div class="flex items-center gap-1.5 bg-surface-container-low p-1 rounded-xl">
+<button class="flex items-center gap-1 px-3 py-2 rounded-lg bg-surface-container-high text-on-surface hover:text-primary-container hover:bg-surface-bright transition-colors text-body-sm font-semibold" id="togglePauseBtn">
+<span class="material-symbols-outlined text-lg">pause_circle</span>
+<span class="hidden sm:inline">Pausar</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-secondary hover:bg-surface-bright transition-colors" id="toggleAudioBtn" title="Monitor Beeper">
+<span class="material-symbols-outlined text-lg">volume_up</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-primary hover:bg-surface-bright transition-colors" title="Guía Protocolo MSP / ATLS 10ma Ed.">
+<span class="material-symbols-outlined text-lg">menu_book</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ========================================================== -->
+<!-- 2. MAIN WORKSPACE: WEBGL VIEWPORT + MULTI-PANE TELEMETRY   -->
+<!-- ========================================================== -->
+<div class="w-full grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<!-- LEFT/CENTER: WebGL Viewport (8 Cols on xl) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<!-- Viewport Shell -->
+<div class="relative w-full h-[580px] lg:h-[620px] rounded-xl overflow-hidden bg-surface-container-lowest shadow-2xl flex flex-col justify-between p-space-md">
+<!-- WebGL canvas / 3D patient model container -->
+
+<!-- Dynamic Visual 3D Patient Representation Placeholder -->
+<div class="absolute inset-0 flex items-center justify-center opacity-85 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="Hyper-realistic dark medical simulation 3D graphic viewport of an adult trauma patient lying on an ICU resusci-bed. Overhead surgical spot luminaire casting clinical cyan, teal, and surgical ambient light. Chest tube decompression sites, bilateral IV lines, transparent anatomical overlays showing tension pneumothorax and collapsed lung telemetry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaUuobTbtxfeDMZKmPzWEd9ducpgkMPNZ0GAjjCEBCC_ytWuebTGVUDM0FShMInl4q16gAJcXERSK9hJU1kO-inyz4QjJI7tEsAndA6FnDupCtQDOfXkQxNMnTsiFkRPxqK5akl0KAOWlki3hwt9ZeSjPSoSEAoJOcdHio_3gTmRUsTkkQLeAv6Ca-KBPq1hN5Uf8sMKR2Z5RKRFu0bEBkVW70bknEODUUBMV-1ncFLXabZDmYHT5G-A"/>
+</div>
+<!-- HUD Layer 1: Patient Header Ribbon -->
+<div class="relative z-10 flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-lowest/80 backdrop-blur-md px-space-md py-2 rounded-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container animate-ping"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold tracking-wide">
+              Masculino, 32 años • Trauma Contuso de Alto Impacto
+            </span>
+</div>
+<div class="flex items-center gap-space-md font-label-sm text-label-sm">
+<span class="text-tertiary-fixed-dim bg-surface-container-high px-2 py-0.5 rounded">GLASGOW: 9/15 (O:2 V:3 M:4)</span>
+<span class="text-error bg-surface-container-high px-2 py-0.5 rounded">RSI PENDIENTE</span>
+</div>
+</div>
+<!-- HUD Layer 2: 3D Anatomical Targeting Overlay Anchors -->
+<div class="relative z-10 flex-1 w-full pointer-events-none">
+<!-- Marker: Airway / C-Spine -->
+<div class="absolute top-1/4 left-1/3 -translate-x-1/2 pointer-events-auto cursor-pointer group">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container-lowest/85 backdrop-blur-md shadow-md text-primary-container">
+<span class="material-symbols-outlined text-sm">air</span>
+<span class="font-label-sm text-label-sm uppercase font-bold">Vía Aérea: Sangre / Obstruida</span>
+</div>
+<div class="w-3 h-3 mx-auto mt-1 rounded-full bg-primary-container animate-pulse shadow-sm"></div>
+</div>
+<!-- Marker: Right Hemithorax (Pneumothorax) -->
+<div class="absolute top-[42%] left-[45%] pointer-events-auto cursor-pointer group">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded bg-error-container/90 text-on-error-container backdrop-blur-md shadow-md">
+<span class="material-symbols-outlined text-sm">emergency</span>
+<span class="font-label-sm text-label-sm uppercase font-bold">Tórax D: Neumotórax a Tensión</span>
+</div>
+<div class="w-3.5 h-3.5 mx-auto mt-1 rounded-full bg-error animate-ping"></div>
+</div>
+<!-- Marker: Left Peripheral Access -->
+<div class="absolute top-[60%] left-[68%] pointer-events-auto cursor-pointer group">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container-lowest/85 backdrop-blur-md shadow-md text-secondary">
+<span class="material-symbols-outlined text-sm">colorize</span>
+<span class="font-label-sm text-label-sm uppercase font-bold">VVP #16G Brazo Izq</span>
+</div>
+<div class="w-2.5 h-2.5 mx-auto mt-1 rounded-full bg-secondary"></div>
+</div>
+<!-- Central Crosshair Reticle -->
+<div class="absolute inset-0 flex items-center justify-center opacity-25">
+<svg class="w-48 h-48 text-primary" fill="none" stroke="currentColor" viewbox="0 0 100 100">
+<circle cx="50" cy="50" r="40" stroke-dasharray="4 4" stroke-width="0.8"></circle>
+<circle cx="50" cy="50" r="12" stroke-width="1"></circle>
+<line stroke-width="1.2" x1="50" x2="50" y1="2" y2="28"></line>
+<line stroke-width="1.2" x1="50" x2="50" y1="72" y2="98"></line>
+<line stroke-width="1.2" x1="2" x2="28" y1="50" y2="50"></line>
+<line stroke-width="1.2" x1="72" x2="98" y1="50" y2="50"></line>
+</svg>
+</div>
+</div>
+<!-- HUD Layer 3: Floating Camera Control Dock & Orientation -->
+<div class="relative z-10 flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-lowest/85 backdrop-blur-md p-2 rounded-xl">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base text-primary-container">view_in_ar</span>
+<span class="font-semibold text-primary-container">VISOR 3D MAKAI V4.8</span>
+<span class="text-surface-variant">•</span>
+<span>60 FPS</span>
+</div>
+<!-- Preset Cameras -->
+<div class="flex items-center gap-1 bg-surface-container-high/60 p-1 rounded-lg">
+<button class="px-2.5 py-1 rounded text-body-sm font-semibold bg-primary-container text-on-primary-container transition-all" data-cam="general">
+              General
+            </button>
+<button class="px-2.5 py-1 rounded text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-cam="airway">
+              Vía Aérea
+            </button>
+<button class="px-2.5 py-1 rounded text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-cam="chest">
+              Tórax
+            </button>
+<button class="px-2.5 py-1 rounded text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-cam="limbs">
+              Extremidades
+            </button>
+</div>
+<!-- Gimbal Action Controls -->
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors" title="Giro 360°">
+<span class="material-symbols-outlined text-base">360</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors" title="Zoom +">
+<span class="material-symbols-outlined text-base">zoom_in</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors" title="Restablecer Vista">
+<span class="material-symbols-outlined text-base">filter_center_focus</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Differential & Clinical Findings Accordion Strip -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<div class="bg-surface-container-lowest p-space-sm rounded-xl flex items-start gap-space-sm">
+<div class="p-2 rounded-lg bg-surface-container-high text-secondary">
+<span class="material-symbols-outlined text-xl">drive_file_stream</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">AUSCULTACIÓN PULMONAR</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Hipoventilación campo derecho</span>
+<span class="font-label-sm text-label-sm text-secondary">Silencio torácico apical</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-xl flex items-start gap-space-sm">
+<div class="p-2 rounded-lg bg-surface-container-high text-primary-container">
+<span class="material-symbols-outlined text-xl">radiology</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">ECOGRAFÍA FAST ACTIVA</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Líquido libre en Morrison (+)</span>
+<span class="font-label-sm text-label-sm text-primary">Shock hemorrágico oculto</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-xl flex items-start gap-space-sm">
+<div class="p-2 rounded-lg bg-surface-container-high text-error">
+<span class="material-symbols-outlined text-xl">fluid_med</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">REANIMACIÓN CON FLUIDOS</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Cristaloides: 1000 mL infundidos</span>
+<span class="font-label-sm text-label-sm text-error">Delta PAM: +6 mmHg temporal</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT: ICU High-Fidelity Multi-Parametric Vital Signs Panel (4 Cols on xl) -->
+<div class="xl:col-span-4 flex flex-col gap-space-sm bg-surface-container-lowest p-space-md rounded-xl shadow-xl">
+<!-- Panel Header -->
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-secondary animate-pulse">ecg</span>
+<span class="font-headline-sm text-headline-sm">MONITOR UCI-104</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-secondary font-bold">
+          LIVE TELEMETRY
+        </span>
+</div>
+<!-- Vital Waveform #1: Lead II ECG (Green) -->
+<div class="bg-surface-container-low p-space-sm rounded-xl flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wider">ECG LEAD II • TAQUICARDIA SINUSAL</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Alarma &gt;120</span>
+</div>
+<div class="flex items-center justify-between gap-space-md">
+<!-- Live-styled animated SVG waveform -->
+<div class="flex-1 h-12 overflow-hidden flex items-center">
+<svg class="w-full h-10 text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 400 60">
+<path d="M0 30 L50 30 L55 25 L60 30 L80 30 L85 10 L90 55 L95 30 L105 30 L115 20 L125 30 L170 30 L175 25 L180 30 L200 30 L205 10 L210 55 L215 30 L225 30 L235 20 L245 30 L290 30 L295 25 L300 30 L320 30 L325 10 L330 55 L335 30 L345 30 L355 20 L365 30 L400 30"></path>
+</svg>
+</div>
+<div class="flex flex-col text-right shrink-0">
+<span class="font-headline-md text-headline-md text-secondary font-bold leading-none">128</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">LPM</span>
+</div>
+</div>
+</div>
+<!-- Vital Waveform #2: SpO2 Pleth Wave (Cyan) -->
+<div class="bg-surface-container-low p-space-sm rounded-xl flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary-container font-bold tracking-wider">SPO2 • PLETISMOGRAFÍA</span>
+<span class="font-label-sm text-label-sm text-error font-semibold">DESATURACIÓN CRÍTICA</span>
+</div>
+<div class="flex items-center justify-between gap-space-md">
+<div class="flex-1 h-12 overflow-hidden flex items-center">
+<svg class="w-full h-10 text-primary-container" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 400 60">
+<path d="M0 45 C30 45, 40 10, 50 10 C60 10, 65 25, 75 25 C85 25, 95 45, 120 45 C150 45, 160 10, 170 10 C180 10, 185 25, 195 25 C205 25, 215 45, 240 45 C270 45, 280 10, 290 10 C300 10, 305 25, 315 25 C325 25, 335 45, 360 45 C380 45, 390 20, 400 20"></path>
+</svg>
+</div>
+<div class="flex flex-col text-right shrink-0">
+<span class="font-headline-md text-headline-md text-primary-container font-bold leading-none">88%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cánula 4L</span>
+</div>
+</div>
+</div>
+<!-- Vital Waveform #3: Arterial Line Blood Pressure (Red/Magenta) -->
+<div class="bg-surface-container-low p-space-sm rounded-xl flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-error font-bold tracking-wider">LÍNEA ARTERIAL • PRESIÓN INVASIVA</span>
+<span class="font-label-sm text-label-sm text-error">PAM 58 mmHg (SHOCK)</span>
+</div>
+<div class="flex items-center justify-between gap-space-md">
+<div class="flex-1 h-12 overflow-hidden flex items-center">
+<svg class="w-full h-10 text-error" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 400 60">
+<path d="M0 40 L40 40 L50 8 L65 24 L75 22 L95 40 L160 40 L170 8 L185 24 L195 22 L215 40 L280 40 L290 8 L305 24 L315 22 L335 40 L400 40"></path>
+</svg>
+</div>
+<div class="flex flex-col text-right shrink-0">
+<span class="font-headline-md text-headline-md text-error font-bold leading-none">82/46</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">mmHg</span>
+</div>
+</div>
+</div>
+<!-- Vital Waveform #4: Capnography EtCO2 (Yellow/Orange) -->
+<div class="bg-surface-container-low p-space-sm rounded-xl flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary-container font-bold tracking-wider">CAPNOGRAFÍA • ETCO2</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hipoperfusión pulmonar</span>
+</div>
+<div class="flex items-center justify-between gap-space-md">
+<div class="flex-1 h-12 overflow-hidden flex items-center">
+<svg class="w-full h-10 text-secondary-container" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 400 60">
+<path d="M0 45 L40 45 L45 15 L75 12 L80 45 L160 45 L165 15 L195 12 L200 45 L280 45 L285 15 L315 12 L320 45 L400 45"></path>
+</svg>
+</div>
+<div class="flex flex-col text-right shrink-0">
+<span class="font-headline-md text-headline-md text-secondary-container font-bold leading-none">29</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">mmHg</span>
+</div>
+</div>
+</div>
+<!-- Secondary Numeric Tiles: FR & Temp -->
+<div class="grid grid-cols-2 gap-space-sm pt-1">
+<div class="bg-surface-container-low p-space-sm rounded-xl flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">FR (RESPIRACIÓN)</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">34 <span class="font-label-sm text-label-sm font-normal text-on-surface-variant">rpm</span></div>
+</div>
+<span class="font-label-sm text-label-sm text-error bg-surface-container px-2 py-1 rounded">Taquipnea</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-xl flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">TEMPERATURA</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">35.8 <span class="font-label-sm text-label-sm font-normal text-on-surface-variant">°C</span></div>
+</div>
+<span class="font-label-sm text-label-sm text-primary bg-surface-container px-2 py-1 rounded">Hipotermia</span>
+</div>
+</div>
+<!-- Recent Hemodynamic Trend Note -->
+<div class="p-2.5 rounded-lg bg-surface-container-high/60 flex items-center gap-space-xs text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">trending_up</span>
+<span>Tendencia: PA ↑ +6 mmHg post infusión 1L cristaloides. Vasoconstricción periférica mantenida.</span>
+</div>
+</div>
+</div>
+<!-- ========================================================== -->
+<!-- 3. BOTTOM WORKBENCH: MEDICAL ACTIONS + LOG + COOP MODULE   -->
+<!-- ========================================================== -->
+<div class="w-full grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<!-- MEDICAL ACTIONS PANEL (5 cols on xl) -->
+<section class="xl:col-span-5 bg-surface-container-lowest p-space-md rounded-xl shadow-xl flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<!-- Panel Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container">medical_services</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Panel de Intervención Clínica</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">MAKAI RxEngine</span>
+</div>
+<!-- Action Categories Navigation Tabs -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-1 p-1 bg-surface-container-low rounded-xl">
+<button class="action-tab px-2 py-1.5 rounded-lg font-body-sm text-body-sm font-semibold bg-primary-container text-on-primary-container transition-all" data-target="airway-actions" id="tabAirway">
+            Vía Aérea
+          </button>
+<button class="action-tab px-2 py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-target="drugs-actions" id="tabDrugs">
+            Fármacos
+          </button>
+<button class="action-tab px-2 py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-target="access-actions" id="tabAccess">
+            Accesos / Fluidos
+          </button>
+<button class="action-tab px-2 py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-target="defib-actions" id="tabDefib">
+            Desfibrilador
+          </button>
+</div>
+<!-- Tab 1: VÍA AÉREA -->
+<div class="action-content flex flex-col gap-space-xs" id="airway-actions">
+<label class="font-label-sm text-label-sm text-on-surface-variant">PROCEDIMIENTOS DE VENTILACIÓN &amp; RESCATE</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-primary">Secuencia Rápida (RSI)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tubo endotraqueal #8.0 + Guía</span>
+</button>
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5 ring-1 ring-error/40">
+<span class="font-body-sm text-body-sm font-semibold text-error">Toracocentesis #14G</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2º EIC Línea medioclavicular D</span>
+</button>
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Máscara Laríngea Fastrach</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dispositivo supraglótico rescate</span>
+</button>
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Ventilación Mecánica FiO2 100%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Modo VCV • Vt: 450 mL • PEEP 5</span>
+</button>
+</div>
+</div>
+<!-- Tab 2: FÁRMACOS (hidden by default) -->
+<div class="action-content hidden flex flex-col gap-space-xs" id="drugs-actions">
+<label class="font-label-sm text-label-sm text-on-surface-variant">FARMACOTERAPIA EN SHOCK Y SEDOANALGESIA</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-secondary">Ketamina 100 mg IV</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Inductor disociativo estable</span>
+</button>
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Rocuronio 70 mg IV</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bloqueador neuromuscular (1 mg/kg)</span>
+</button>
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-primary">Ácido Tranexámico 1g IV</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bolo en 10 min (CRASH-2/3)</span>
+</button>
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-error">Noradrenalina Infusión</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">0.1 - 0.5 mcg/kg/min titulación</span>
+</button>
+</div>
+</div>
+<!-- Tab 3: ACCESOS (hidden) -->
+<div class="action-content hidden flex flex-col gap-space-xs" id="access-actions">
+<label class="font-label-sm text-label-sm text-on-surface-variant">INFUSIÓN Y RESUCITACIÓN HEMOSTÁTICA</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Protocolo Transfusión Masiva</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Relación 1:1:1 (CGR/PFC/Plaquetas)</span>
+</button>
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-primary">Sol. Salina 0.9% 1000 cc</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bolo presurizado tibio</span>
+</button>
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">VVC Subclavia Derecha</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Catéter 7 Fr Triple Lumen</span>
+</button>
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-secondary">Vía Intraósea Tibial</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Acceso de emergencia EZ-IO</span>
+</button>
+</div>
+</div>
+<!-- Tab 4: DESFIBRILADOR (hidden) -->
+<div class="action-content hidden flex flex-col gap-space-xs" id="defib-actions">
+<label class="font-label-sm text-label-sm text-on-surface-variant">ELECTROTERAPIA Y MANEJO DE ARRITMIAS</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-error">Descarga Bifásica 200J</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Desfibrilación no sincronizada</span>
+</button>
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-secondary">Cardioversión Sincronizada 100J</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Para taquiarritmias con pulso</span>
+</button>
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Marcapasos Transcutáneo</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Modo Demanda 70 lpm • 60 mA</span>
+</button>
+<button class="action-btn text-left p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-primary">Análisis de Ritmo DEA</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Interpretación asistida por IA</span>
+</button>
+</div>
+</div>
+<!-- Custom Dosage / Clinical Parameter Input -->
+<div class="flex items-center gap-space-sm bg-surface-container-low p-2 rounded-xl">
+<div class="flex-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-lg">tune</span>
+<input class="w-full bg-transparent border-0 text-body-sm text-on-surface placeholder-on-surface-variant focus:outline-none" placeholder="Dosis personalizada o instrucción clínica..." type="text"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant px-2">IV / ET</span>
+</div>
+</div>
+<!-- Execution CTA Button -->
+<button class="w-full py-3 px-space-md rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 shadow-lg hover:shadow-cyan-500/20 active:scale-[0.99] transition-all" id="executeActionBtn">
+<span class="material-symbols-outlined">play_arrow</span>
+<span>Ejecutar Acción Clínica Seleccionada</span>
+</button>
+</section>
+<!-- DECISION HISTORY & AUDIT LOG TERMINAL (4 cols on xl) -->
+<section class="xl:col-span-4 bg-surface-container-lowest p-space-md rounded-xl shadow-xl flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary">terminal</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Historial de Decisiones</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">AUDITORÍA ATLS</span>
+</div>
+<!-- Terminal stream container -->
+<div class="flex-1 max-h-[300px] overflow-y-auto flex flex-col gap-2 font-mono text-xs pr-1" id="auditLogStream">
+<div class="p-2 rounded bg-surface-container-low flex flex-col gap-0.5">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>[00:01:10] • EVALUACIÓN INICIAL</span>
+<span class="text-secondary font-bold">COMPLETADO</span>
+</div>
+<p class="text-on-surface">Evaluación de escena segura. Triage primario ATLS inicial iniciado. Paciente inconsciente responde a estímulos dolorosos.</p>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex flex-col gap-0.5">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>[00:03:45] • EXAMEN CEFALOCAUDAL</span>
+<span class="text-primary-container font-bold">HALLAZGO</span>
+</div>
+<p class="text-on-surface">Vía aérea con restos hemáticos. Ausencia de ruidos respiratorios en hemitórax derecho. Pulsos radiales apenas perceptibles.</p>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex flex-col gap-0.5">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>[00:06:20] • OXIGENACIÓN</span>
+<span class="text-error font-bold">FALLO</span>
+</div>
+<p class="text-on-surface">Colocación de cánula nasal a 4 L/min. SpO2 sin mejoría sostenida (88%). Disnea en progresión.</p>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex flex-col gap-0.5">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>[00:09:15] • DESCOMPRESIÓN</span>
+<span class="text-secondary font-bold">ÉXITO</span>
+</div>
+<p class="text-on-surface">Toracocentesis con trocar #14G en 2do EIC medioclavicular D. Salida brusca de aire a tensión. Descompresión efectiva.</p>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex flex-col gap-0.5">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>[00:12:00] • HEMOSTASIA</span>
+<span class="text-primary font-bold">INFUSIÓN</span>
+</div>
+<p class="text-on-surface">Administración de Ácido Tranexámico 1g bolo IV completada dentro de la ventana de oro (&lt; 3 horas post-impacto).</p>
+</div>
+</div>
+<div class="pt-2 flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Evaluación Continua: MSP-Score 88/100</span>
+<button class="text-primary hover:underline">Descargar PDF Caso</button>
+</div>
+</section>
+<!-- COOPERATIVE MULTIPLAYER & SQUAD ROSTER (3 cols on xl) -->
+<section class="xl:col-span-3 bg-surface-container-lowest p-space-md rounded-xl shadow-xl flex flex-col justify-between gap-space-sm">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary">group_work</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Sala Clínica #04</h2>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            COOP ACTIVO
+          </span>
+</div>
+<!-- Squad Roster List -->
+<div class="flex flex-col gap-2">
+<!-- Member 1: User -->
+<div class="p-2 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-xs">
+                  AT
+                </div>
+<span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+<div class="flex flex-col truncate">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Dr. Alejandro Thome (Tú)</span>
+<span class="font-label-sm text-label-sm text-primary truncate">Líder Vía Aérea &amp; Shock</span>
+</div>
+</div>
+<button class="text-secondary p-1 rounded hover:bg-surface-container" title="Micrófono Activo">
+<span class="material-symbols-outlined text-base">mic</span>
+</button>
+</div>
+<!-- Member 2 -->
+<div class="p-2 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs">
+                  SV
+                </div>
+<span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+<div class="flex flex-col truncate">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Dra. Sofia Villacís</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Farmacología &amp; Infusión</span>
+</div>
+</div>
+<button class="text-secondary p-1 rounded hover:bg-surface-container" title="Micrófono Activo">
+<span class="material-symbols-outlined text-base">mic</span>
+</button>
+</div>
+<!-- Member 3 -->
+<div class="p-2 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs">
+                  ML
+                </div>
+<span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+</div>
+<div class="flex flex-col truncate">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Dr. Mateo Larrea</span>
+<span class="font-label-sm text-label-sm text-secondary-container truncate">En acción: Tubo Torácico</span>
+</div>
+</div>
+<button class="text-on-surface-variant p-1 rounded hover:bg-surface-container" title="Micrófono Silenciado">
+<span class="material-symbols-outlined text-base">mic_off</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Network and WebRTC Status Box -->
+<div class="p-2.5 rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>LATENCIA P2P WebRTC</span>
+<span class="text-secondary font-semibold font-mono">24 ms • ÓPTIMO</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[95%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Encriptación TLS 1.3 Hospitalaria</span>
+</div>
+</section>
+</div>
+</div>
+<!-- Client-side Interactive Behaviors -->
+<script>
+  (function() {
+    // 1. Simple Tab Switching for Medical Actions Panel
+    const tabs = document.querySelectorAll('.action-tab');
+    const contents = document.querySelectorAll('.action-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('bg-primary-container', 'text-on-primary-container');
+          t.classList.add('text-on-surface-variant');
+        });
+        tab.classList.add('bg-primary-container', 'text-on-primary-container');
+        tab.classList.remove('text-on-surface-variant');
+
+        const targetId = tab.getAttribute('data-target');
+        contents.forEach(content => {
+          if (content.id === targetId) {
+            content.classList.remove('hidden');
+          } else {
+            content.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 2. Action Button Selection feedback
+    const actionButtons = document.querySelectorAll('.action-btn');
+    let activeActionName = 'Secuencia Rápida de Intubación (RSI)';
+
+    actionButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        actionButtons.forEach(b => b.classList.remove('bg-surface-container-highest', 'ring-1', 'ring-primary-container'));
+        btn.classList.add('bg-surface-container-highest', 'ring-1', 'ring-primary-container');
+        activeActionName = btn.querySelector('span')?.textContent || 'Acción Clínica';
+      });
+    });
+
+    // 3. Execution action log appender
+    const execBtn = document.getElementById('executeActionBtn');
+    const auditStream = document.getElementById('auditLogStream');
+
+    if (execBtn && auditStream) {
+      execBtn.addEventListener('click', () => {
+        const now = new Date();
+        const timeStr = `00:14:${now.getSeconds() < 10 ? '0' + now.getSeconds() : now.getSeconds()}`;
+        
+        const logItem = document.createElement('div');
+        logItem.className = 'p-2 rounded bg-surface-container-low flex flex-col gap-0.5 animate-fadeIn';
+        logItem.innerHTML = `
+          <div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+            <span>[${timeStr}] • EJECUCIÓN CLÍNICA</span>
+            <span class="text-primary-container font-bold">REGISTRADO</span>
+          </div>
+          <p class="text-on-surface font-semibold text-primary">${activeActionName} ejecutada por Dr. Alejandro Thome. Monitorizando respuesta hemodinámica.</p>
+        `;
+        auditStream.appendChild(logItem);
+        auditStream.scrollTop = auditStream.scrollHeight;
+      });
+    }
+
+    // 4. Timer simple mock tick
+    let seconds = 862;
+    const timerElem = document.getElementById('scenarioTimer');
+    if (timerElem) {
+      setInterval(() => {
+        seconds++;
+        const hrs = Math.floor(seconds / 3600).toString().padStart(2, '0');
+        const mins = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+        const secs = (seconds % 60).toString().padStart(2, '0');
+        timerElem.textContent = `${hrs}:${mins}:${secs}`;
+      }, 1000);
+    }
+  })();
+</script></main></div></body></html>

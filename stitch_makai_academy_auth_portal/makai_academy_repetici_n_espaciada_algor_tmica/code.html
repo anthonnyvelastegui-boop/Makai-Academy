@@ -1,0 +1,441 @@
+<!DOCTYPE html><html class="dark" lang="es" style="width: 1280px; height: 1071px; overflow: hidden; position: relative;"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>
+  @layer base { 
+    html, body { margin: 0; padding: 0; background-color: #0b0e13; } 
+    body { overscroll-behavior: none; } 
+    main > :first-child { margin-top: 0 !important; } 
+    main > :last-child { margin-bottom: 0 !important; } 
+  } 
+  ::-webkit-scrollbar { display: none; }
+
+  /* 3D Flip System without mirror inversion bugs */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .card-flipper {
+    position: relative;
+    width: 100%;
+    min-height: 560px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .card-flipper.is-flipped {
+    transform: rotateY(180deg);
+  }
+  .card-face {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 0.75rem;
+  }
+  .card-front {
+    transform: rotateY(0deg);
+    z-index: 2;
+  }
+  .card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+  }
+  .cyan-glow {
+    box-shadow: 0 0 35px -8px rgba(0, 229, 255, 0.16);
+  }
+  .cyan-subtle-glow {
+    box-shadow: 0 0 16px rgba(0, 229, 255, 0.22);
+  }
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary": "#c3f5ff", "error": "#ffb4ab", "on-primary-fixed": "#001f24", "surface-container-lowest": "#0b0e13", "on-surface-variant": "#bac9cc", "on-error-container": "#ffdad6", "secondary-fixed": "#acf847", "inverse-primary": "#006875", "on-secondary-fixed": "#102000", "tertiary-container": "#ffc3b0", "background": "#0b0e13", "on-primary-container": "#00626e", "secondary-fixed-dim": "#91db2a", "on-tertiary": "#5d1900", "surface-container-highest": "#32353b", "on-background": "#e1e2ea", "inverse-on-surface": "#2e3036", "on-secondary": "#1f3700", "secondary": "#94de2d", "secondary-container": "#7ac100", "tertiary": "#ffe8e1", "tertiary-fixed-dim": "#ffb59d", "on-primary": "#00363d", "primary-fixed": "#9cf0ff", "error-container": "#93000a", "surface-dim": "#0b0e13", "surface-container": "#1d2025", "on-surface": "#e1e2ea", "on-error": "#690005", "surface": "#0b0e13", "on-secondary-fixed-variant": "#304f00", "primary-container": "#00e5ff", "on-secondary-container": "#2c4900", "inverse-surface": "#e1e2ea", "surface-bright": "#36393f", "on-primary-fixed-variant": "#004f58", "surface-container-high": "#272a30", "surface-container-low": "#191c21", "outline-variant": "#3b494c", "on-tertiary-fixed-variant": "#832600", "primary-fixed-dim": "#00daf3", "on-tertiary-fixed": "#390c00", "tertiary-fixed": "#ffdbd0", "on-tertiary-container": "#a23200", "outline": "#849396", "surface-tint": "#00daf3", "surface-variant": "#32353b" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-md": "1rem", "margin": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem" }, "fontFamily": { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["JetBrains Mono"], "headline-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-sm": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-xl": ["44px", { "lineHeight": "54px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.25)] border-r border-surface-container-high/40"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center p-1"><span class="material-symbols-outlined text-primary-container text-2xl">vital_signs</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">MAKAI ACADEMY</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Med Informatics</span></div></div><div class="px-space-md mt-space-md mb-space-sm"><div class="bg-surface-container-low px-space-md py-space-sm rounded-xl flex items-center justify-between border border-surface-container-high/50"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Simulador CACES v4.8</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">MED-EC</span></div></div><nav class="flex flex-col gap-1 px-space-sm mt-space-sm"><a class="group flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-lms" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl text-primary">space_dashboard</span><span class="font-body-md text-body-md">Dashboard LMS</span></div></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="simulador-caces" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl text-primary">clinical_notes</span><span class="font-body-md text-body-md">Simulador CACES</span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-high text-primary tracking-tight">ENARM/CACES</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="banco-de-preguntas" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl text-primary">quiz</span><span class="font-body-md text-body-md">Banco de Preguntas</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">4,250+</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="rotaciones-clinicas" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl text-primary">stethoscope</span><span class="font-body-md text-body-md">Rotaciones Clínicas</span></div></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-xl bg-primary-container text-on-primary-fixed font-bold shadow-[0_0_16px_rgba(0,229,255,0.25)] transition-all" data-path="repeticion-espaciada" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl">style</span><span class="font-body-md text-body-md font-semibold">Repetición Espaciada</span></div><span class="font-label-sm text-[10px] px-1.5 py-0.5 rounded bg-on-primary-fixed/20 text-on-primary-fixed tracking-tight uppercase font-mono">Sináptico v4.4</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="metricas-desempeno" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl text-primary">ecg</span><span class="font-body-md text-body-md">Métricas &amp; Desempeño</span></div></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="mentoria-elite-vip" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl text-primary-container">stars</span><span class="font-body-md text-body-md">Mentoría Élite VIP</span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-primary-container/20 text-primary-fixed">VIP</span></a></nav></div><div class="px-space-md flex flex-col gap-space-sm"><div class="bg-surface-container-low p-space-md rounded-xl flex items-center gap-space-sm border border-surface-container-high/40"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-secondary"><span class="material-symbols-outlined text-lg">database</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface">MedLib Ecuador 2025</span><span class="font-label-sm text-label-sm text-on-surface-variant">Guías MSP actualizadas</span></div></div><div class="flex items-center justify-between px-space-xs pt-space-xs text-on-surface-variant font-label-sm text-label-sm"><span>Makai Academic LMS</span><span class="text-primary font-mono">v2.4.1</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-[#0b0e13]/90 backdrop-blur-xl z-40 px-space-lg flex items-center justify-between border-b border-surface-container-high/40"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-primary text-xl pointer-events-none">search</span><input class="w-full bg-surface-container-low pl-11 pr-space-md py-2 rounded-xl text-on-surface placeholder:text-outline font-body-md text-body-md border border-surface-container-high/60 focus:outline-none focus:border-primary-container transition-all" placeholder="Buscar diagnósticos CIE-11, fármacos, vademécum, guías MSP..." type="text"></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-low border border-surface-container-high/50"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant">PACS Sincronizado</span></div><button class="relative p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors border border-surface-container-high/40"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Dr. Alejandro Thome</span><span class="font-label-sm text-label-sm text-primary leading-none">Interno Rotativo</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary-container/40" src="https://lh3.googleusercontent.com/aida/AEtjO1VuUjxlCtlJiD3CNkKxH1IYHiODaNNJfLO5pNqhHLO8BYsoPK6jzvTVRh480h_us4LvWNFgs3ScdynSI5qjrOObh9xlnuVZOA4PHsBKf_euc8LFG2FFBSgecgmQUiF6vFSOlB_8IwPhkO1dpVyYLFRlsih_Du1PZ4CycsXLMtDlabHHHO_SbGIgmJAfHCXVd3mMlnVitlvGw1YeVSiLYT1wa5lQACAcMVDWJbX17-aanfcn0WTHtorqS5UuNQxcgAqgX-WsuOvSvg"></div></div></header><main class="relative w-full pt-16 bg-[#0b0e13] px-space-lg py-space-lg min-h-screen"><div class="flex flex-col w-full max-w-6xl mx-auto">
+<!-- Top Session Meta Bar -->
+<section class="w-full bg-[#111319] border border-surface-container-high/60 rounded-xl p-space-md mb-space-lg flex flex-col gap-space-md shadow-lg">
+<div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-space-md">
+<!-- Deck Selector & Algorithmic Tag -->
+<div class="flex flex-wrap items-center gap-space-md min-w-0">
+<div class="flex items-center gap-space-xs bg-[#191c21] border border-surface-container-high/60 px-space-md py-2 rounded-xl">
+<span class="material-symbols-outlined text-primary-container text-xl">cardiology</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Mazo Activo</span>
+<select class="bg-transparent text-primary font-headline-sm text-headline-sm focus:outline-none cursor-pointer pr-4 font-semibold" id="deckSelector">
+<option class="bg-surface-container-lowest text-on-surface" selected="" value="cardio">Cardiología &amp; Urgencias Médicas • Foco CACES 2025</option>
+<option class="bg-surface-container-lowest text-on-surface" value="pediatria">Pediatría Integral &amp; Neonatología • Foco CACES</option>
+<option class="bg-surface-container-lowest text-on-surface" value="gineco">Ginecología &amp; Obstetricia Quirúrgica</option>
+<option class="bg-surface-container-lowest text-on-surface" value="cirugia">Cirugía General &amp; Trauma Shock</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-[#191c21] border border-surface-container-high/40">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Algoritmo Sináptico Predictivo v4.4</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">• Retención Proyectada: <strong class="text-primary font-semibold">94.2%</strong></span>
+</div>
+</div>
+<!-- Quick Session Controls -->
+<div class="flex items-center gap-space-sm self-end xl:self-auto">
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-all border border-surface-container-high/40" id="zenBtn" onclick="toggleZenMode()">
+<span class="material-symbols-outlined text-lg text-primary">fullscreen</span>
+<span class="font-label-sm text-label-sm">Modo Zen</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all border border-surface-container-high/40" onclick="pauseSession()">
+<span class="material-symbols-outlined text-lg">pause</span>
+<span class="font-label-sm text-label-sm">Pausar</span>
+</button>
+<a class="flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-surface-container-lowest hover:bg-error-container/30 text-on-surface-variant hover:text-error transition-all border border-surface-container-high/30" href="#">
+<span class="material-symbols-outlined text-lg">close</span>
+<span class="font-label-sm text-label-sm">Salir</span>
+</a>
+</div>
+</div>
+<!-- Progress & Status Counts -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-center pt-space-xs border-t border-surface-container-high/30">
+<!-- Progress Bar Segment -->
+<div class="md:col-span-6 flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">analytics</span> Progreso de la Sesión
+</span>
+<span class="text-primary font-semibold font-mono" id="progressText">68% completado (42 / 60 tarjetas)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-lowest overflow-hidden border border-surface-container-high/40">
+<div class="h-full bg-gradient-to-r from-primary-container via-primary-fixed-dim to-secondary transition-all duration-500 rounded-full" id="sessionProgressBar" style="width: 68%;"></div>
+</div>
+</div>
+<!-- Card Buckets -->
+<div class="md:col-span-6 flex items-center justify-between md:justify-end gap-space-md">
+<div class="flex items-center gap-2 px-space-sm py-1.5 rounded-lg bg-[#191c21] border border-secondary/30">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(148,222,45,0.5)]"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant leading-tight uppercase">Repasadas Hoy</span>
+<span class="font-label-md text-label-md text-secondary font-bold leading-none font-mono" id="countDone">42</span>
+</div>
+</div>
+<div class="flex items-center gap-2 px-space-sm py-1.5 rounded-lg bg-[#191c21] border border-amber-400/30">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.5)]"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant leading-tight uppercase">Por Repasar</span>
+<span class="font-label-md text-label-md text-amber-300 font-bold leading-none font-mono" id="countDue">18</span>
+</div>
+</div>
+<div class="flex items-center gap-2 px-space-sm py-1.5 rounded-lg bg-[#191c21] border border-primary-container/30">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_rgba(0,229,255,0.6)]"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant leading-tight uppercase">Nuevas</span>
+<span class="font-label-md text-label-md text-primary-container font-bold leading-none font-mono" id="countNew">10</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Clinical Flashcard Workspace (Clean 3D Flip System) -->
+<div class="w-full flex flex-col items-center">
+<div class="w-full max-w-5xl perspective-1000 min-h-[570px] relative">
+<div class="card-flipper" id="flashcardFlipper">
+<!-- CARD FRONT (Anverso: Caso Clínico / Pregunta) -->
+<article class="card-face card-front bg-[#111319] border border-surface-container-high/80 rounded-xl p-space-xl cyan-glow flex flex-col justify-between overflow-y-auto">
+<div class="flex flex-col gap-space-md">
+<!-- Header Badges -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-xs border-b border-surface-container-high/40">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-1 rounded-md bg-primary-container/15 text-primary-container font-label-sm text-label-sm font-semibold uppercase tracking-wide border border-primary-container/30">
+                Reactivo Clínico CACES #48
+              </span>
+<span class="px-space-sm py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                Cardiología &amp; Urgencias
+              </span>
+</div>
+<span class="flex items-center gap-1.5 px-space-sm py-1 rounded-md bg-error-container/30 text-error font-label-sm text-label-sm font-semibold border border-error/30">
+<span class="material-symbols-outlined text-sm">warning</span> Dificultad: Alta Complejidad
+            </span>
+</div>
+<!-- Case Vignette Text -->
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<div class="flex items-center gap-space-xs text-primary-container font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-base">clinical_notes</span> Presentación del Paciente
+            </div>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+              Paciente masculino de 64 años con antecedente de insuficiencia cardíaca con fracción de eyección reducida (<strong class="text-primary font-bold">FEVI 28%</strong>), clase funcional <strong class="text-amber-400 font-semibold">NYHA III</strong>, actualmente bajo tratamiento con <span class="text-on-surface underline decoration-primary/40 underline-offset-4 font-medium">Enalapril 20 mg/día</span>, <span class="text-on-surface underline decoration-primary/40 underline-offset-4 font-medium">Carvedilol 25 mg/12h</span> y <span class="text-on-surface underline decoration-primary/40 underline-offset-4 font-medium">Espironolactona 25 mg/día</span>. Presenta disnea progresiva a mínimos esfuerzos.
+            </p>
+</div>
+<!-- Paraclinical Telemetry HUD -->
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-space-sm p-space-md bg-[#0b0e13] border border-surface-container-high/60 rounded-xl">
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-on-surface-variant">Presión Arterial</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-mono font-semibold">110/70 <span class="font-label-sm text-xs text-on-surface-variant font-normal">mmHg</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-on-surface-variant">Frec. Cardíaca</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-mono font-semibold">68 <span class="font-label-sm text-xs text-on-surface-variant font-normal">lpm</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-on-surface-variant">Creatinina Sérica</span>
+<span class="font-headline-sm text-headline-sm text-primary font-mono font-semibold">1.1 <span class="font-label-sm text-xs text-on-surface-variant font-normal">mg/dL</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-on-surface-variant">Potasio (K+)</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-mono font-semibold">4.7 <span class="font-label-sm text-xs text-on-surface-variant font-normal">mEq/L</span></span>
+</div>
+<div class="flex flex-col col-span-2 sm:col-span-1">
+<span class="font-label-sm text-[11px] text-on-surface-variant">eGFR (CKD-EPI)</span>
+<span class="font-headline-sm text-headline-sm text-primary font-mono font-semibold">68 <span class="font-label-sm text-xs text-on-surface-variant font-normal">mL/min</span></span>
+</div>
+</div>
+<!-- Core Clinical Question -->
+<div class="p-space-md bg-surface-container/80 border border-primary-container/20 rounded-xl flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-2xl mt-0.5">help</span>
+<p class="font-body-md text-body-md text-primary font-semibold leading-snug">
+              ¿Cuál es la intervención terapéutica con mayor evidencia de reducción de mortalidad recomendada por las guías para optimizar el régimen neurohormonal en este estadio?
+            </p>
+</div>
+</div>
+<!-- Action Area -->
+<div class="flex flex-col items-center justify-center pt-space-lg gap-space-xs">
+<button class="group px-space-xl py-space-md bg-primary-container hover:bg-[#00daf3] text-[#001f24] font-bold rounded-xl cyan-subtle-glow flex items-center gap-space-sm transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer shadow-lg" onclick="flipCard()">
+<span class="material-symbols-outlined text-xl transition-transform group-hover:rotate-180">sync</span>
+<span class="font-body-md text-body-md tracking-wide">Mostrar Respuesta y Justificación Médica</span>
+<kbd class="ml-space-sm px-2.5 py-0.5 rounded bg-black/20 text-[#001f24] font-mono text-xs font-semibold">Espacio</kbd>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Presiona la barra espaciadora o haz clic para voltear la tarjeta</span>
+</div>
+</article>
+<!-- CARD BACK (Reverso: Respuesta Oficial & Perla Médica CACES) -->
+<article class="card-face card-back bg-[#111319] border border-surface-container-high/80 rounded-xl p-space-xl cyan-glow flex flex-col justify-between overflow-y-auto">
+<div class="flex flex-col gap-space-md">
+<!-- Back Header Status -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-xs border-b border-surface-container-high/40">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-1 rounded-md bg-secondary/15 text-secondary font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1.5 border border-secondary/30 font-semibold">
+<span class="material-symbols-outlined text-sm">verified</span> RESOLUCIÓN TERAPÉUTICA OFICIAL • GUÍA IC-ACC/AHA/ESC
+              </span>
+</div>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary-container font-label-sm text-label-sm transition-colors px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high border border-surface-container-high/40 cursor-pointer" onclick="flipCard()">
+<span class="material-symbols-outlined text-base">undo</span> Voltear al caso clínico
+            </button>
+</div>
+<!-- Highlighted Direct Answer -->
+<div class="p-space-md bg-surface-container border-l-4 border-secondary rounded-r-xl rounded-l flex flex-col gap-1.5">
+<span class="font-label-sm text-xs text-secondary uppercase font-bold tracking-wider">Respuesta Correcta de Primera Línea</span>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">
+              Sustitución de IECA (Enalapril) por Sacubitrilo/Valsartán (ARNI) previo período de lavado de 36 horas + Adición de inhibidor de SGLT2 (Dapagliflozina o Empagliflozina).
+            </p>
+</div>
+<!-- Bulleted Pathophysiological Justification -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-sm text-xs text-primary-container uppercase tracking-wider font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schema</span> Justificación Fisiopatológica y Terapéutica
+            </span>
+<div class="flex flex-col gap-2.5 text-body-md text-on-surface">
+<div class="p-space-sm bg-[#0b0e13] border border-surface-container-high/50 rounded-lg flex items-start gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-primary-container/20 text-primary-container flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span>
+<p class="leading-relaxed">
+<strong class="text-primary font-semibold">ARNI / Sacubitrilo-Valsartán</strong> demostró superioridad incuestionable (estudio <em class="text-on-surface-variant font-mono">PARADIGM-HF</em>) sobre enalapril con reducción estadísticamente significativa de muerte cardiovascular y hospitalizaciones por falla cardíaca en pacientes con IC-FEr persistente.
+                </p>
+</div>
+<div class="p-space-sm bg-error-container/20 border border-error/30 rounded-lg flex items-start gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-error/20 text-error flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span>
+<p class="leading-relaxed text-on-surface">
+<strong class="text-error font-semibold">Período de lavado (Washout) mandatorio:</strong> Se requiere un lapso estricto de mínimo <strong>36 horas</strong> sin IECA antes de iniciar Sacubitrilo/Valsartán para neutralizar el riesgo crítico de angioedema severo por degradación concomitante de bradicinina.
+                </p>
+</div>
+<div class="p-space-sm bg-[#0b0e13] border border-surface-container-high/50 rounded-lg flex items-start gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-secondary/20 text-secondary flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
+<p class="leading-relaxed">
+<strong class="text-secondary font-semibold">Pilares de la cuádruple terapia:</strong> El régimen de máxima supervivencia se compone de <strong>ARNI + Betabloqueante + Antagonista de Receptor Mineralocorticoide (ARM) + iSGLT2</strong>, reduciendo la mortalidad combinada hasta en un 35%.
+                </p>
+</div>
+</div>
+</div>
+<!-- Footnote Meta -->
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant pt-space-xs border-t border-surface-container-high/30">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">menu_book</span> Normativa MSP Ecuador 2024 / Consensus CACES Cardiología
+            </span>
+<span class="text-secondary font-mono font-medium">+15 XP Sinapsis de Dominio</span>
+</div>
+</div>
+<div class="pt-space-md text-center text-label-sm font-label-sm text-on-surface-variant">
+          Puntúa tu nivel de memoria cognitiva para calibrar el algoritmo adaptativo:
+        </div>
+</article>
+</div>
+</div>
+<!-- Algorithmic Retention Rating Panel -->
+<section class="w-full max-w-5xl mt-space-lg flex flex-col items-center gap-space-md">
+<div class="w-full grid grid-cols-1 md:grid-cols-3 gap-space-md" id="ratingButtonsContainer">
+<!-- Button 1: Hard -->
+<button class="group flex flex-col items-center justify-center p-space-md bg-[#111319] hover:bg-[#191c21] rounded-xl border border-red-400/40 hover:border-red-400 transition-all duration-200 transform hover:-translate-y-0.5 text-center cursor-pointer shadow-md" onclick="recordRetention(1)">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-red-400 shadow-[0_0_8px_rgba(248,113,113,0.5)]"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-red-400 transition-colors">Difícil</span>
+<kbd class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-xs group-hover:text-red-400 border border-surface-container-high/40">[ 1 ]</kbd>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+          &lt; 10 min • Repetir hoy en sesión
+        </span>
+<span class="font-label-sm text-xs text-red-400/90 font-mono mt-1">Factor Sináptico: 1.2</span>
+</button>
+<!-- Button 2: Good -->
+<button class="group flex flex-col items-center justify-center p-space-md bg-[#111319] hover:bg-[#191c21] rounded-xl border border-amber-400/40 hover:border-amber-400 transition-all duration-200 transform hover:-translate-y-0.5 text-center cursor-pointer shadow-md" onclick="recordRetention(2)">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.5)]"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-amber-400 transition-colors">Bueno</span>
+<kbd class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-xs group-hover:text-amber-400 border border-surface-container-high/40">[ 2 ]</kbd>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+          3 días • Intervalo estándar adaptativo
+        </span>
+<span class="font-label-sm text-xs text-amber-300 font-mono mt-1">Factor Sináptico: 2.1</span>
+</button>
+<!-- Button 3: Easy -->
+<button class="group flex flex-col items-center justify-center p-space-md bg-[#111319] hover:bg-[#191c21] rounded-xl border border-emerald-400/40 hover:border-emerald-400 transition-all duration-200 transform hover:-translate-y-0.5 text-center cursor-pointer shadow-md" onclick="recordRetention(3)">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.5)]"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-emerald-400 transition-colors">Fácil</span>
+<kbd class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-xs group-hover:text-emerald-400 border border-surface-container-high/40">[ 3 ]</kbd>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+          7 días • Consolidación a largo plazo
+        </span>
+<span class="font-label-sm text-xs text-emerald-300 font-mono mt-1">Factor Sináptico: 3.5</span>
+</button>
+</div>
+<!-- Secondary Clinical Actions Bar -->
+<div class="flex flex-wrap items-center justify-between w-full px-space-xs text-on-surface-variant text-label-sm font-label-sm gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-md">
+<button class="flex items-center gap-1.5 hover:text-primary-container transition-colors cursor-pointer" onclick="flagCard()">
+<span class="material-symbols-outlined text-lg">flag</span>
+<span>Marcar para Tutoría VIP</span>
+</button>
+<button class="flex items-center gap-1.5 hover:text-error transition-colors cursor-pointer" onclick="suspendCard()">
+<span class="material-symbols-outlined text-lg">pause_circle</span>
+<span>Pausar Reactivo</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs bg-[#191c21] px-space-sm py-1 rounded-lg border border-surface-container-high/40">
+<span class="material-symbols-outlined text-base text-primary-container">keyboard</span>
+<span>Atajos: [Espacio] Voltear | [1] Difícil | [2] Bueno | [3] Fácil</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Notification Toast Layer -->
+<div class="fixed bottom-6 right-6 bg-surface-container-highest px-space-md py-space-sm rounded-xl text-on-surface font-body-md text-body-md shadow-2xl flex items-center gap-space-sm opacity-0 pointer-events-none transition-all duration-300 transform translate-y-4 z-50 border border-surface-container-high" id="toastNotification">
+<span class="material-symbols-outlined text-primary-container" id="toastIcon">info</span>
+<span id="toastText">Acción procesada por el algoritmo.</span>
+</div>
+<script>
+  let isCardFlipped = false;
+  let completedCount = 42;
+  const totalCards = 60;
+  let isZen = false;
+
+  function flipCard() {
+    const flipper = document.getElementById('flashcardFlipper');
+    isCardFlipped = !isCardFlipped;
+    if (isCardFlipped) {
+      flipper.classList.add('is-flipped');
+    } else {
+      flipper.classList.remove('is-flipped');
+    }
+  }
+
+  function recordRetention(grade) {
+    if (!isCardFlipped) {
+      flipCard();
+      showToast('Tarjeta revelada. Registra tu nivel de memoria.', 'sync_saved_loc');
+      return;
+    }
+
+    completedCount = Math.min(completedCount + 1, totalCards);
+    const percentage = Math.round((completedCount / totalCards) * 100);
+    
+    document.getElementById('progressText').innerText = `${percentage}% completado (${completedCount} / ${totalCards} tarjetas)`;
+    document.getElementById('sessionProgressBar').style.width = `${percentage}%`;
+    document.getElementById('countDone').innerText = completedCount;
+    
+    const dueCountElem = document.getElementById('countDue');
+    let currentDue = parseInt(dueCountElem.innerText);
+    if (currentDue > 0) dueCountElem.innerText = currentDue - 1;
+
+    let msg = '';
+    if (grade === 1) msg = 'Agendado en cola inmediata (< 10 min). Sinapsis reactivada.';
+    if (grade === 2) msg = 'Retención media confirmada. Próxima revisión en 3 días.';
+    if (grade === 3) msg = 'Consolidación óptima. Intervalo extendido a 7 días.';
+
+    showToast(msg, 'verified');
+
+    // Flip back smoothly for next reactive card
+    setTimeout(() => {
+      flipCard();
+    }, 450);
+  }
+
+  function toggleZenMode() {
+    isZen = !isZen;
+    const zenBtn = document.getElementById('zenBtn');
+    const aside = document.querySelector('aside');
+    const header = document.querySelector('header');
+    const mainWrap = document.querySelector('.pl-72');
+
+    if (isZen) {
+      zenBtn.classList.add('bg-primary-container', 'text-on-primary-fixed');
+      if (aside) aside.classList.add('hidden');
+      if (header) header.classList.add('hidden');
+      if (mainWrap) {
+        mainWrap.classList.remove('pl-72');
+        mainWrap.classList.add('pl-0');
+      }
+      showToast('Modo Zen activado. Enfoque cognitivo maximizado.', 'fullscreen');
+    } else {
+      zenBtn.classList.remove('bg-primary-container', 'text-on-primary-fixed');
+      if (aside) aside.classList.remove('hidden');
+      if (header) header.classList.remove('hidden');
+      if (mainWrap) {
+        mainWrap.classList.add('pl-72');
+        mainWrap.classList.remove('pl-0');
+      }
+      showToast('Modo estándar restaurado.', 'fullscreen_exit');
+    }
+  }
+
+  function pauseSession() {
+    showToast('Sesión de estudio pausada. Estado sináptico guardado.', 'pause_circle');
+  }
+
+  function flagCard() {
+    showToast('Reactivo CACES #48 añadido a tu sesión de Mentoría Élite VIP.', 'star');
+  }
+
+  function suspendCard() {
+    showToast('Reactivo pausado temporalmente del ciclo activo.', 'pause_circle');
+  }
+
+  function showToast(text, icon = 'info') {
+    const toast = document.getElementById('toastNotification');
+    const toastText = document.getElementById('toastText');
+    const toastIcon = document.getElementById('toastIcon');
+
+    toastText.innerText = text;
+    toastIcon.innerText = icon;
+    toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    setTimeout(() => {
+      toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+      toast.classList.remove('opacity-100', 'translate-y-0');
+    }, 2800);
+  }
+
+  // Keyboard Shortcuts Listener
+  document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space') {
+      event.preventDefault();
+      flipCard();
+    } else if (event.key === '1') {
+      recordRetention(1);
+    } else if (event.key === '2') {
+      recordRetention(2);
+    } else if (event.key === '3') {
+      recordRetention(3);
+    }
+  });
+</script>
+</div></main></div><div id="snapdom-sandbox" data-snapdom-sandbox="true" aria-hidden="true" style="position: absolute; left: -9999px; top: -9999px; width: 0px; height: 0px; overflow: hidden;"></div></body></html>
