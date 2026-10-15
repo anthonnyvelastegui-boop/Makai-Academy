@@ -531,5 +531,78 @@
     }
   </script>
 
+<!-- Firebase Integration Module -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
+  // Tus llaves reales de Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyDSjXw_zeju22gD7hLon7tSpqU6oMrLvNA",
+    authDomain: "makai-academy.firebaseapp.com",
+    projectId: "makai-academy",
+    storageBucket: "makai-academy.firebasestorage.app",
+    messagingSenderId: "933591748448",
+    appId: "1:933591748448:web:8283434f805f4783971805",
+    measurementId: "G-QRRQQ0VERX"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+  const provider = new GoogleAuthProvider();
+
+  async function saveUser(user) {
+    await setDoc(doc(db, "usuarios", user.uid), {
+      email: user.email,
+      subscriptionLevel: "Básico",
+      createdAt: serverTimestamp()
+    }, { merge: true });
+  }
+
+  // Lógica del Botón de Correo y Contraseña
+  const btnSubmit = document.getElementById("btn-submit");
+  if(btnSubmit) {
+    btnSubmit.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("med-email").value;
+      const password = document.getElementById("med-pass").value;
+      const isLogin = window.currentMode === 'login';
+
+      if (!email || !password) {
+        alert("Por favor ingrese correo y contraseña");
+        return;
+      }
+
+      try {
+        if (isLogin) {
+          await signInWithEmailAndPassword(auth, email, password);
+          alert("¡Inicio de sesión exitoso!");
+        } else {
+          const cred = await createUserWithEmailAndPassword(auth, email, password);
+          await saveUser(cred.user);
+          alert("¡Registro exitoso en Makai Academy!");
+        }
+      } catch (error) {
+        alert("Error: " + error.message);
+      }
+    });
+  }
+
+  // Lógica del Botón de Google
+  const googleBtn = document.querySelector('button svg path[fill="#EA4335"]')?.closest('button');
+  if(googleBtn) {
+    googleBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      try {
+        const cred = await signInWithPopup(auth, provider);
+        await saveUser(cred.user);
+        alert(`¡Bienvenido ${cred.user.displayName}!`);
+      } catch (error) {
+        alert("Error con Google: " + error.message);
+      }
+    });
+  }
+</script>
 </body></html>
