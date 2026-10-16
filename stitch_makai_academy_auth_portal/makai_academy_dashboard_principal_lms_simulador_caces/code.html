@@ -787,7 +787,7 @@
     const mod3 = document.getElementById('module-3');
     const mod4 = document.getElementById('module-4');
 
-    if(!mod1 || !mod2 || !mod3 || !mod4) return;
+    if (!mod1 || !mod2 || !mod3 || !mod4) return;
 
     mod1.classList.add('hidden');
     mod2.classList.add('hidden');
@@ -796,21 +796,22 @@
 
     if (hash === '#examen') {
       mod3.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (hash === '#metricas') {
       mod1.classList.remove('hidden');
       mod4.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      // Default / #resumen
       mod1.classList.remove('hidden');
       mod2.classList.remove('hidden');
     }
 
-    // Update active state in sidebar nav if possible
     document.querySelectorAll('nav a').forEach(a => {
-      a.classList.remove('bg-primary-container', 'text-on-primary-fixed', 'font-bold');
+      a.classList.remove('bg-primary-container', 'text-on-primary-fixed', 'font-bold', 'shadow-[0_0_16px_rgba(0,229,255,0.25)]');
       a.classList.add('text-on-surface-variant');
-      if (a.getAttribute('href').endsWith(hash) || (hash === '' && a.getAttribute('href').endsWith('#resumen'))) {
-        a.classList.add('bg-primary-container', 'text-on-primary-fixed', 'font-bold');
+      const href = a.getAttribute('href') || '';
+      if ((hash && href.endsWith(hash)) || ((!hash || hash === '#resumen') && href.endsWith('#resumen') && a.getAttribute('data-path') === 'dashboard-lms')) {
+        a.classList.add('bg-primary-container', 'text-on-primary-fixed', 'font-bold', 'shadow-[0_0_16px_rgba(0,229,255,0.25)]');
         a.classList.remove('text-on-surface-variant');
       }
     });
@@ -822,24 +823,31 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     showView(window.location.hash || '#resumen');
-  });
 
-  // Interactions logic
-  document.addEventListener('DOMContentLoaded', () => {
-    // Career Buttons
+    // 1. Conectar botones "Iniciar Nuevo Simulacro CACES" y "Concluir & Enviar a Calificar"
+    document.querySelectorAll('button').forEach(btn => {
+      if (btn.innerText.includes('Iniciar Nuevo Simulacro CACES')) {
+        btn.addEventListener('click', () => { window.location.hash = '#examen'; });
+      }
+      if (btn.innerText.includes('Concluir & Enviar a Calificar') || btn.innerText.includes('Ver Historial')) {
+        btn.addEventListener('click', () => { window.location.hash = '#metricas'; });
+      }
+    });
+
+    // 2. Botones de Carrera
     const careerBtns = document.querySelectorAll('.btn-career');
     careerBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         careerBtns.forEach(b => {
-          b.classList.remove('bg-primary', 'text-on-primary-fixed');
+          b.classList.remove('bg-primary', 'text-on-primary-fixed', 'font-semibold', 'shadow-sm');
           b.classList.add('text-on-surface-variant', 'hover:text-on-surface', 'hover:bg-surface-container');
         });
-        btn.classList.add('bg-primary', 'text-on-primary-fixed');
+        btn.classList.add('bg-primary', 'text-on-primary-fixed', 'font-semibold', 'shadow-sm');
         btn.classList.remove('text-on-surface-variant', 'hover:text-on-surface', 'hover:bg-surface-container');
       });
     });
 
-    // Rotation Buttons
+    // 3. Botones de Rotación / Materia
     const rotationBtns = document.querySelectorAll('.btn-rotation');
     rotationBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -852,117 +860,82 @@
       });
     });
 
-    // Mode Cards
-    const modeCards = document.querySelectorAll('.card-mode');
+    // 4. Tarjetas de Modo (solo dentro de module-2)
+    const modeCards = document.querySelectorAll('#module-2 .card-mode');
     modeCards.forEach(card => {
       card.addEventListener('click', () => {
         modeCards.forEach(c => {
-          c.classList.remove('bg-surface-container-high', 'shadow-md');
+          c.classList.remove('bg-surface-container-high', 'shadow-md', 'ring-1', 'ring-primary-container');
           c.classList.add('bg-surface-container-lowest', 'hover:bg-surface-container');
-          const badge = c.querySelector('span.px-2.py-0\\.5.rounded');
-          if (badge && badge.innerText === 'SELECCIONADO') {
-            badge.remove();
-          }
+          const badge = c.querySelector('.badge-selected');
+          if (badge) badge.remove();
         });
-        card.classList.add('bg-surface-container-high', 'shadow-md');
+        card.classList.add('bg-surface-container-high', 'shadow-md', 'ring-1', 'ring-primary-container');
         card.classList.remove('bg-surface-container-lowest', 'hover:bg-surface-container');
+      });
+    });
 
-        // Add badge if not exists
-        const header = card.querySelector('.flex.items-start.justify-between');
-        if (header && !header.querySelector('.bg-primary-container')) {
-           const badgeHtml = '<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-fixed font-label-sm text-label-sm font-bold">SELECCIONADO</span>';
-           header.insertAdjacentHTML('beforeend', badgeHtml);
+    // 5. Opciones de Examen A, B, C, D (dentro de module-3)
+    const examOptions = document.querySelectorAll('#module-3 label');
+    examOptions.forEach(label => {
+      label.addEventListener('click', () => {
+        examOptions.forEach(l => {
+          l.classList.remove('bg-primary-container/10', 'ring-1', 'ring-primary-container', 'shadow-md');
+          l.classList.add('bg-surface-container-high');
+        });
+        label.classList.remove('bg-surface-container-high');
+        label.classList.add('bg-primary-container/10', 'ring-1', 'ring-primary-container', 'shadow-md');
+      });
+    });
+
+    // 6. Matriz de Reactivos y botones Anterior / Siguiente
+    const qMatrixBtns = document.querySelectorAll('.btn-qmatrix');
+    const reactivoBadge = Array.from(document.querySelectorAll('#module-3 span')).find(el => el.innerText.includes('REACTIVO #'));
+    let currentQ = 47;
+
+    function updateQuestionNumber(num) {
+      currentQ = num;
+      if (reactivoBadge) reactivoBadge.innerText = `REACTIVO #${num.toString().padStart(2, '0')}`;
+      qMatrixBtns.forEach(b => {
+        b.classList.remove('bg-primary-container', 'text-on-primary-fixed', 'shadow-md', 'shadow-cyan-400/40');
+        if (parseInt(b.innerText) === num) {
+          b.classList.add('bg-primary-container', 'text-on-primary-fixed', 'shadow-md', 'shadow-cyan-400/40');
         }
       });
-    });
+    }
 
-    // Exam Options A, B, C, D
-    const optionBtns = document.querySelectorAll('.btn-option');
-    optionBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        optionBtns.forEach(b => {
-          b.classList.remove('bg-primary-container/20', 'border', 'border-primary-container');
-          b.classList.add('bg-surface-container-lowest');
-        });
-        btn.classList.remove('bg-surface-container-lowest');
-        btn.classList.add('bg-primary-container/20', 'border', 'border-primary-container');
-      });
-    });
-
-    // Question Matrix
-    const qMatrixBtns = document.querySelectorAll('.btn-qmatrix');
-    const currentQDisplay = document.querySelector('.text-primary-container.font-bold');
     qMatrixBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        qMatrixBtns.forEach(b => b.classList.remove('ring-2', 'ring-primary-container', 'ring-offset-2', 'ring-offset-surface'));
-        btn.classList.add('ring-2', 'ring-primary-container', 'ring-offset-2', 'ring-offset-surface');
-        if(currentQDisplay) {
-            currentQDisplay.innerText = btn.innerText;
-        }
+        const num = parseInt(btn.innerText);
+        if (!isNaN(num)) updateQuestionNumber(num);
       });
     });
 
-    // Siguiente / Anterior buttons
-    const navBtns = document.querySelectorAll('#module-3 button');
-    let prevBtn, nextBtn;
-    navBtns.forEach(b => {
-        if(b.innerText.includes('Anterior')) prevBtn = b;
-        if(b.innerText.includes('Siguiente')) nextBtn = b;
+    document.querySelectorAll('#module-3 button').forEach(b => {
+      if (b.innerText.includes('Siguiente Pregunta')) {
+        b.addEventListener('click', () => { if (currentQ < 56) updateQuestionNumber(currentQ + 1); });
+      }
+      if (b.innerText.includes('Anterior')) {
+        b.addEventListener('click', () => { if (currentQ > 1) updateQuestionNumber(currentQ - 1); });
+      }
     });
 
-    if (nextBtn && currentQDisplay) {
-        nextBtn.addEventListener('click', () => {
-            let num = parseInt(currentQDisplay.innerText);
-            if(num < 56) {
-                num++;
-                currentQDisplay.innerText = num.toString().padStart(2, '0');
-                // Select in matrix
-                qMatrixBtns.forEach(b => {
-                    b.classList.remove('ring-2', 'ring-primary-container', 'ring-offset-2', 'ring-offset-surface');
-                    if (parseInt(b.innerText) === num) {
-                        b.classList.add('ring-2', 'ring-primary-container', 'ring-offset-2', 'ring-offset-surface');
-                    }
-                });
-            }
-        });
-    }
-    if (prevBtn && currentQDisplay) {
-        prevBtn.addEventListener('click', () => {
-            let num = parseInt(currentQDisplay.innerText);
-            if(num > 1) {
-                num--;
-                currentQDisplay.innerText = num.toString().padStart(2, '0');
-                // Select in matrix
-                qMatrixBtns.forEach(b => {
-                    b.classList.remove('ring-2', 'ring-primary-container', 'ring-offset-2', 'ring-offset-surface');
-                    if (parseInt(b.innerText) === num) {
-                        b.classList.add('ring-2', 'ring-primary-container', 'ring-offset-2', 'ring-offset-surface');
-                    }
-                });
-            }
-        });
-    }
-
-    // Timer
-    const timerDisplay = document.querySelector('.font-mono.text-headline-sm');
-    if (timerDisplay) {
-      let timeString = timerDisplay.innerText;
-      let parts = timeString.split(':');
-      if (parts.length === 3) {
-          let totalSeconds = parseInt(parts[0])*3600 + parseInt(parts[1])*60 + parseInt(parts[2]);
-          setInterval(() => {
-              if(totalSeconds > 0 && document.getElementById('module-3').classList.contains('flex')) {
-                  totalSeconds--;
-                  let h = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
-                  let m = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
-                  let s = (totalSeconds % 60).toString().padStart(2, '0');
-                  timerDisplay.innerText = `${h}:${m}:${s}`;
-              }
-          }, 1000);
-      }
+    // 7. Cronómetro en tiempo real (02:41:09)
+    const timerContainer = Array.from(document.querySelectorAll('#module-3 div')).find(el => el.innerText.trim() === '02:41:09' || el.innerText.includes('02:41:'));
+    if (timerContainer) {
+      let totalSeconds = 2 * 3600 + 41 * 60 + 9;
+      setInterval(() => {
+        const mod3 = document.getElementById('module-3');
+        if (totalSeconds > 0 && mod3 && !mod3.classList.contains('hidden')) {
+          totalSeconds--;
+          const h = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
+          const m = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
+          const s = (totalSeconds % 60).toString().padStart(2, '0');
+          timerContainer.innerHTML = `<span class="material-symbols-outlined text-primary-container text-2xl">hourglass_top</span> ${h}:${m}:${s}`;
+        }
+      }, 1000);
     }
   });
-
 </script>
 </body>
 
