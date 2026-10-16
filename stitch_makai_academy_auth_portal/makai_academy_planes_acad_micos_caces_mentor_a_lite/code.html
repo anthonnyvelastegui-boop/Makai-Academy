@@ -593,14 +593,21 @@
   // Lógica del Botón de Google
   const googleBtn = document.querySelector('button svg path[fill="#EA4335"]')?.closest('button');
   if(googleBtn) {
+    let isSigningIn = false;
     googleBtn.addEventListener("click", async (e) => {
       e.preventDefault();
+      if(isSigningIn) return;
+      isSigningIn = true;
       try {
         const cred = await signInWithPopup(auth, provider);
         await saveUser(cred.user);
         window.location.href = "../makai_academy_dashboard_principal_lms_simulador_caces/code.html";
       } catch (error) {
-        alert("Error con Google: " + error.message);
+        if (error.code !== "auth/cancelled-popup-request" && error.code !== "auth/popup-closed-by-user") {
+          alert("Error con Google: " + error.message);
+        }
+      } finally {
+        isSigningIn = false;
       }
     });
   }
